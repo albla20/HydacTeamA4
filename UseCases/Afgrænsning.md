@@ -3,6 +3,7 @@
 * Medarbejdere
 * Ejere
 * Kunder
+* Gæster
 ### Indenfor systemet
 * Firma
 * Navn
