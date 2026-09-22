@@ -1,0 +1,45 @@
+
+@startuml Objektmodel
+title Objektmodel (Objektdiagram) - Komme/gå-system til HYDAC
+skinparam objectAttributeIconSize 0
+
+object "Rene Hansen : Medarbejder" as reneHansen {
+  Medarbejder ID = 12
+  Navn = "René Hansen"
+  Er Til Stede = ja
+  Er Logget Ind = ja
+  Ankomst Tidspunkt = "07:45"
+  Afgangs Tidspunkt = "-"
+}
+
+object "Daniel R : Medarbejder" as danielR {
+  Medarbejder ID = 7
+  Navn = "Daniel R."
+  Er Til Stede = ja
+  Er Logget Ind = ja
+  Ankomst Tidspunkt = "07:30"
+  Afgangs Tidspunkt = "-"
+}
+
+object "Mikkel Holst : Gæst" as mikkelHolst {
+  Navn = "Mikkel Holst"
+  Firma = "Murr Elektronik"
+  Er Til Stede = nej
+  Ankomst Tidspunkt = "08:30"
+  Afgangs Tidspunkt = "12:50"
+  Sikkerheds folder Udleveret = ja
+}
+
+object "Kasper Edal : Gæst" as kasperEdal {
+  Navn = "Kasper Edal"
+  Firma = "Nidec"
+  Er Til Stede = ja
+  Ankomst Tidspunkt = "12:00"
+  Afgangs Tidspunkt = "12:45"
+  Sikkerheds folder Udleveret = nej
+}
+
+reneHansen -- mikkelHolst : ansvarlig for
+danielR -- kasperEdal : ansvarlig for
+
+@enduml
