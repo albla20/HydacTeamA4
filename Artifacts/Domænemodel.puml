@@ -12,6 +12,7 @@ class Medarbejder {
   Ankomst Tidspunkt
   Afgangs Tidspunkt
   Adminstrator
+  Lokale
 }
 
 class Gæst {

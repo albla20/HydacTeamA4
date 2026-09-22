@@ -93,7 +93,8 @@
 **Hovedscenarie:**
 1. Brugeren vælger funktionen "Se hvem er til stede"
 2. Systemet henter alle medarbejdere/gæster med status "til stede"
-3. Systemet viser listen (navn + ankomsttidspunkt)
+3. Systemet viser listen (navn,ankomsttidspunkt + lokale)
+
 
 ---
 
