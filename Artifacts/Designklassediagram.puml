@@ -4,7 +4,7 @@ title Design Class Diagram (Larman) - Komme/gå-system HYDAC
 hide circle
 skinparam classAttributeIconSize 0
 
-class KomGaSystem <<controller>> {
+class KomGåSystem {
   + tjekIndMedarbejder(id: String) : void
   + tjekUdMedarbejder(id: String) : void
   + visTilStede() : List<Person>
@@ -16,20 +16,19 @@ class KomGaSystem <<controller>> {
   + søgPerson(navn: String) : Person
 }
 
-abstract class Person {
-  # navn : String
-  # ankomsttid : DateTime
-  # afgangstid : DateTime
-  # status : String
+class Medarbejder {
+  - medarbejderID : String
+  - afdeling : String
+  - brugernavn : String
+  - navn : String
+  - ankomsttid : DateTime
+  - afgangstid : DateTime
+  - status : String
   + tjekInd() : void
   + tjekUd() : void
   + erTilStede() : boolean
   + hentStatus() : String
-}
-
-class Medarbejder {
-  - medarbejderID : String
-  - afdeling : String
+  + logInd() : boolean
   + opretStamdata(navn: String, afdeling: String) : void
   + redigerStamdata(navn: String, afdeling: String) : void
   + erVærtFor(gæst: Gæst) : boolean
@@ -38,23 +37,29 @@ class Medarbejder {
 class Gæst {
   - firma : String
   - sikkerhedsfolderUdleveret : boolean
+  - navn : String
+  - ankomsttid : DateTime
+  - afgangstid : DateTime
+  - status : String
+  + tjekInd() : void
+  + tjekUd() : void
+  + erTilStede() : boolean
+  + hentStatus() : String
   + markerSikkerhedsfolderUdleveret() : void
   + hentAnsvarlig() : Medarbejder
 }
 
 class Administrator {
-  - brugernavn : String
-  + logInd() : boolean
+  + userName : String
+  + password : String
+  + login() : boolean
 }
+KomGåSystem "1" -- "0..*" Administrator : administrerer
+KomGåSystem "1" -- "0..*" Medarbejder : administrerer 
+KomGåSystem "1" -- "0..*" Gæst : administrerer 
 
-Medarbejder -up-|> Person
-Gæst -up-|> Person
 
-KomGaSystem "1" -- "0..*" Medarbejder : administrerer >
-KomGaSystem "1" -- "0..*" Gæst : administrerer >
 
-Gæst "0..*" --> "1" Medarbejder : ansvarlig >
 
-Administrator ..> KomGaSystem : anvender >
 
 @enduml
