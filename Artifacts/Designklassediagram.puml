@@ -1,0 +1,60 @@
+@startuml
+title Design Class Diagram (Larman) - Komme/gå-system HYDAC
+
+hide circle
+skinparam classAttributeIconSize 0
+
+class KomGaSystem <<controller>> {
+  + tjekIndMedarbejder(id: String) : void
+  + tjekUdMedarbejder(id: String) : void
+  + visTilStede() : List<Person>
+  + opretMedarbejder(navn: String, afdeling: String) : Medarbejder
+  + redigerMedarbejder(id: String, navn: String, afdeling: String) : void
+  + registrerGæst(navn: String, firma: String, ansvarlig: Medarbejder) : Gæst
+  + tjekUdGæst(navn: String) : void
+  + markerSikkerhedsfolderUdleveret(navn: String) : void
+  + søgPerson(navn: String) : Person
+}
+
+abstract class Person {
+  # navn : String
+  # ankomsttid : DateTime
+  # afgangstid : DateTime
+  # status : String
+  + tjekInd() : void
+  + tjekUd() : void
+  + erTilStede() : boolean
+  + hentStatus() : String
+}
+
+class Medarbejder {
+  - medarbejderID : String
+  - afdeling : String
+  + opretStamdata(navn: String, afdeling: String) : void
+  + redigerStamdata(navn: String, afdeling: String) : void
+  + erVærtFor(gæst: Gæst) : boolean
+}
+
+class Gæst {
+  - firma : String
+  - sikkerhedsfolderUdleveret : boolean
+  + markerSikkerhedsfolderUdleveret() : void
+  + hentAnsvarlig() : Medarbejder
+}
+
+class Administrator {
+  - brugernavn : String
+  + logInd() : boolean
+}
+
+Medarbejder -up-|> Person
+Gæst -up-|> Person
+
+KomGaSystem "1" -- "0..*" Medarbejder : administrerer >
+KomGaSystem "1" -- "0..*" Gæst : administrerer >
+
+Gæst "0..*" --> "1" Medarbejder : ansvarlig >
+
+Administrator ..> KomGaSystem : anvender >
+
+@enduml
