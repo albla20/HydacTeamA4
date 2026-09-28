@@ -1,4 +1,4 @@
-@startuml
+@startuml Designklassediagram
 title Design Class Diagram (Larman) - Komme/gå-system HYDAC
 
 hide circle
