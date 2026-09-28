@@ -1,0 +1,16 @@
+@startuml
+title SSD: UC6 - Registrer gæstens afgang
+hide footbox
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+
+actor "Medarbejder" as med
+participant "KomGåSystem" as sys
+
+med -> sys : hentMineGæster()
+sys --> med : liste over gæster medarbejderen har ansvaret for
+
+med -> sys : tjekUdGæst(navn)
+sys --> med : bekræftelse
+
+@enduml

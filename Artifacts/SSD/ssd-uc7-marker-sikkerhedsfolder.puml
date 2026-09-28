@@ -1,0 +1,16 @@
+@startuml
+title SSD: UC7 - Marker sikkerhedsfolder udleveret
+hide footbox
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+
+actor "Medarbejder" as med
+participant "KomGåSystem" as sys
+
+med -> sys : søgPerson(navn)
+sys --> med : gæsten vist på listen
+
+med -> sys : markerSikkerhedsfolderUdleveret(navn)
+sys --> med : bekræftelse
+
+@enduml

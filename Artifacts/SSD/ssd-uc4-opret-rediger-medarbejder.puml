@@ -1,0 +1,18 @@
+@startuml
+title SSD: UC4 - Opret/rediger medarbejder
+hide footbox
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+
+actor "Administrator" as admin
+participant "KomGåSystem" as sys
+
+alt Opret ny
+  admin -> sys : opretMedarbejder(navn, afdeling, brugernavn, kodeord)
+  sys --> admin : ny medarbejder (med ID)
+else Rediger eksisterende
+  admin -> sys : redigerMedarbejder(id, navn, afdeling)
+  sys --> admin : bekræftelse
+end
+
+@enduml

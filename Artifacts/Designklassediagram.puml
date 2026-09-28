@@ -3,6 +3,7 @@ title Design Class Diagram (Larman) - Komme/gå-system HYDAC
 
 hide circle
 skinparam classAttributeIconSize 0
+hide emptymembers
 
 class KomGåSystem {
   + tjekIndMedarbejder(id: String) : void

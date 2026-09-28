@@ -1,0 +1,13 @@
+@startuml
+title SSD: UC8 - Søg person og se status
+hide footbox
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+
+actor "Bruger" as bruger
+participant "KomGåSystem" as sys
+
+bruger -> sys : søgPerson(navn)
+sys --> bruger : status (til stede / ikke til stede)\nog evt. ankomsttidspunkt
+
+@enduml

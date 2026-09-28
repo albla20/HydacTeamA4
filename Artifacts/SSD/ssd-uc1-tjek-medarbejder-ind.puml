@@ -1,0 +1,13 @@
+@startuml
+title SSD: UC1 - Tjek medarbejder ind
+hide footbox
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+
+actor "Medarbejder" as med
+participant "KomGåSystem" as sys
+
+med -> sys : tjekIndMedarbejder(id)
+sys --> med : bekræftelse
+
+@enduml

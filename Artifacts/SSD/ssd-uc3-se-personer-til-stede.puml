@@ -1,0 +1,13 @@
+@startuml
+title SSD: UC3 - Se personer "til stede"
+hide footbox
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+
+actor "Bruger" as bruger
+participant "KomGåSystem" as sys
+
+bruger -> sys : visTilStede()
+sys --> bruger : liste over personer til stede\n(navn, ankomsttidspunkt, lokale)
+
+@enduml
