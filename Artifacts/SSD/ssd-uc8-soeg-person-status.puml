@@ -1,4 +1,4 @@
-@startuml
+@startuml UC8
 title SSD: UC8 - Søg person og se status
 hide footbox
 skinparam sequenceMessageAlign left

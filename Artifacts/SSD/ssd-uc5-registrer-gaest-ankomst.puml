@@ -1,4 +1,4 @@
-@startuml
+@startuml UC5
 title SSD: UC5 - Registrer gæst ved ankomst
 hide footbox
 skinparam sequenceMessageAlign left

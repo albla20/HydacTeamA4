@@ -1,4 +1,4 @@
-@startuml
+@startuml UC3
 title SSD: UC3 - Se personer "til stede"
 hide footbox
 skinparam sequenceMessageAlign left

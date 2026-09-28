@@ -1,4 +1,4 @@
-@startuml
+@startuml UC6
 title SSD: UC6 - Registrer gæstens afgang
 hide footbox
 skinparam sequenceMessageAlign left

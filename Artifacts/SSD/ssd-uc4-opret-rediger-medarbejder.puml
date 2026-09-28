@@ -1,4 +1,4 @@
-@startuml
+@startuml UC4
 title SSD: UC4 - Opret/rediger medarbejder
 hide footbox
 skinparam sequenceMessageAlign left

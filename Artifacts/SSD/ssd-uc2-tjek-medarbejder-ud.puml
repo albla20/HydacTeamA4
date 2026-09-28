@@ -1,4 +1,4 @@
-@startuml
+@startuml UC2
 title SSD: UC2 - Tjek medarbejder ud
 hide footbox
 skinparam sequenceMessageAlign left
