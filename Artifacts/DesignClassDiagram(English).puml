@@ -26,14 +26,14 @@ class Employee {
   - departureTime : DateTime
   - status : String
   + <<get>> IsAdmin : boolean
-  + checkIn() : void
-  + checkOut() : void
-  + isPresent() : boolean
-  + getStatus() : String
-  + logIn() : boolean
-  + createMasterData(name: String, department: String) : void
-  + editMasterData(name: String, department: String) : void
-  + isHostFor(guest: Guest) : boolean
+  + CheckIn() : void
+  + CheckOut() : void
+  + IsPresent() : boolean
+  + GetStatus() : String
+  + LogIn() : boolean
+  + CreateEmployee(name: String, department: String) : void
+  + EditEmployee(name: String, department: String) : void
+  + IsHostFor(guest: Guest) : boolean
 }
 
 class Guest {
@@ -43,12 +43,12 @@ class Guest {
   - arrivalTime : DateTime
   - departureTime : DateTime
   - status : String
-  + checkIn() : void
-  + checkOut() : void
-  + isPresent() : boolean
-  + getStatus() : String
-  + markSafetyFolderHandedOut() : void
-  + getHost() : Employee
+  + CheckIn() : void
+  + CheckOut() : void
+  + IsPresent() : boolean
+  + GetStatus() : String
+  + MarkSafetyFolderHandedOut() : void
+  + GetHost() : Employee
 }
 
 CheckInSystem "1" -- "0..*" Employee : manages
