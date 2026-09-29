@@ -24,10 +24,9 @@ class Medarbejder {
   - navn : String
   - ankomsttid : DateTime
   - afgangstid : DateTime
-  - status : String
   + <<get>> IsAdminstrator : boolean
-  + TjekInd() : void
-  + TjekUd() : void
+  + TjekIndGæst() : void
+  + TjekUdGæst() : void
   + ErTilStede() : boolean
   + HentStatus() : String
   + LogInd() : boolean
@@ -42,7 +41,6 @@ class Gæst {
   - navn : String
   - ankomsttid : DateTime
   - afgangstid : DateTime
-  - status : String
   + TjekInd() : void
   + TjekUd() : void
   + ErTilStede() : boolean
@@ -54,9 +52,5 @@ class Gæst {
 
 KomGåSystem "1" -- "0..*" Medarbejder : administrerer 
 KomGåSystem "1" -- "0..*" Gæst : administrerer 
-
-
-
-
 
 @enduml
