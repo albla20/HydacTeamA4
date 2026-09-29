@@ -4,8 +4,8 @@ hide footbox
 skinparam sequenceMessageAlign left
 skinparam responseMessageBelowArrow true
 
-actor "Bruger" as bruger
-participant "KomGåSystem" as sys
+actor "Bruger" as bruger #White
+participant ": KomGåSystem" as sys #White
 
 bruger -> sys : visTilStede()
 sys --> bruger : liste over personer til stede\n(navn, ankomsttidspunkt, lokale)

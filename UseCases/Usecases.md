@@ -50,13 +50,11 @@
 - Medarbejderen er ikke allerede tjekket ind.
 
 **Hovedscenarie:**
-1. Medarbejderen vælger funktionen "Tjek ind" i menuen
-2. Systemet beder om medarbejderens ID/navn
-3. Medarbejderen indtaster ID/navn
-4. Systemet finder medarbejderen i stamdata
-5. Systemet registrerer nuværende tidspunkt som ankomsttid
-6. Systemet sætter medarbejderens status til "til stede"
-7. Systemet bekræfter registreringen til medarbejderen
+1. Medarbejderen vælger funktionen "Tjek ind" i KomGåSystem
+2. Systemet finder medarbejderen i stamdata
+3. Systemet registrerer nuværende tidspunkt som ankomsttid
+4. Systemet sætter medarbejderens status til "til stede"
+5. Systemet bekræfter registreringen til medarbejderen
 
 ---
 
@@ -114,6 +112,7 @@
 4. Administratoren indtaster data
 5. Systemet validerer input
 6. Systemet gemmer medarbejderen
+7. Systemet bekræfter gemt data
 
 ---
 
@@ -156,7 +155,7 @@
 4. Medarbejder vælger "Tjek gæst ud"
 5. Systemet registrerer nuværende tidspunkt som afgangstid
 6. Systemet sætter gæstens status til "ikke til stede"
-
+7. Systemet bekræfter gemt data
 ---
 
 ## UC7 – Marker sikkerhedsfolder udleveret
@@ -175,7 +174,7 @@
 1. Medarbejder søger efter gæsten i systemet.
 2. Systemet viser gæsten på listen.
 2. Medarbejder markerer feltet "Sikkerhedsfolder udleveret" for gæsten.
-3. Systemet gemmer ændringen
+3. Systemet bekræfter gemt ændring
 
 ---
 

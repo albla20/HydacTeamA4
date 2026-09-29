@@ -4,12 +4,13 @@ hide footbox
 skinparam sequenceMessageAlign left
 skinparam responseMessageBelowArrow true
 
-actor "Administrator" as admin
-participant "KomGåSystem" as sys
+actor ": Administrator" as admin #White
+participant ": KomGåSystem" as sys #White
 
+admin -> sys : administrererMedarbejdere
 alt Opret ny
   admin -> sys : opretMedarbejder(navn, afdeling, brugernavn, kodeord)
-  sys --> admin : ny medarbejder (med ID)
+  sys --> admin : bekræftelse
 else Rediger eksisterende
   admin -> sys : redigerMedarbejder(id, navn, afdeling)
   sys --> admin : bekræftelse

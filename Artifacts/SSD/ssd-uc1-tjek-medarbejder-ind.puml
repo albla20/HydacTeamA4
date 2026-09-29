@@ -4,10 +4,10 @@ hide footbox
 skinparam sequenceMessageAlign left
 skinparam responseMessageBelowArrow true
 
-actor "Medarbejder" as med
-participant "KomGåSystem" as sys
+actor ": Medarbejder" as med #White
+participant ": KomGåSystem" as sys #White
 
-med -> sys : tjekIndMedarbejder(id)
+med -> sys : tjekInd
 sys --> med : bekræftelse
 
 @enduml

@@ -4,8 +4,8 @@ hide footbox
 skinparam sequenceMessageAlign left
 skinparam responseMessageBelowArrow true
 
-actor "Medarbejder" as med
-participant "KomGåSystem" as sys
+actor ": Medarbejder" as med #White
+participant ": KomGåSystem" as sys #White
 
 med -> sys : søgPerson(navn)
 sys --> med : gæsten vist på listen
