@@ -8,13 +8,12 @@ hide emptymembers
 class CheckInSystem {
   + checkInEmployee(id: String) : void
   + checkOutEmployee(id: String) : void
-  + showPresent() : List<Person>
+  + showPresent() : List
   + createEmployee(name: String, department: String) : Employee
   + editEmployee(id: String, name: String, department: String) : void
   + registerGuest(name: String, company: String, host: Employee) : Guest
   + checkOutGuest(name: String) : void
   + markSafetyFolderHandedOut(name: String) : void
-  + searchPerson(name: String) : Person
 }
 
 class Employee {
@@ -30,8 +29,6 @@ class Employee {
   + IsPresent() : boolean
   + GetStatus() : String
   + LogIn() : boolean
-  + CreateEmployee(name: String, department: String) : void
-  + EditEmployee(name: String, department: String) : void
   + IsHostFor(guest: Guest) : boolean
 }
 
