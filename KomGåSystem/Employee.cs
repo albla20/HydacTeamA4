@@ -13,16 +13,15 @@ namespace KomGåSystem
         private string _name;
         //private dateTime 
         //private departureTime
-        private string _status;
         public bool IsAdmin {get; }
         public bool IsLoggedIn { get; set; }
 
         private bool _isLoggedIn;
-        public void CheckIn()
+        public void CheckInGuest()
         {
 
         }
-        public void CheckOut()
+        public void CheckOutGuest()
         {
 
         }
@@ -31,15 +30,6 @@ namespace KomGåSystem
 
         }
         public string GetStatus()
-        {
-
-        }
-
-        public void CreateEmployee(string name, string department)
-        {
-
-        }
-        public void EditEmployee (string name, string department)
         {
 
         }
