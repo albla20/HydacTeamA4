@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Hydac Main Menu");
+            Console.WriteLine("*****************");
+            Console.WriteLine("");
+            Console.WriteLine("Employee");
+
         }
     }
 }

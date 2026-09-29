@@ -1,0 +1,16 @@
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\KomGåSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\KomGåSystem.AssemblyInfoInputs.cache
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\KomGåSystem.AssemblyInfo.cs
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\KomGåSystem.csproj.CoreCompileInputs.cache
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\KomGåSystem.sourcelink.json
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\bin\Debug\net10.0\KomGåSystem.exe
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\bin\Debug\net10.0\KomGåSystem.deps.json
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\bin\Debug\net10.0\KomGåSystem.runtimeconfig.json
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\bin\Debug\net10.0\KomGåSystem.dll
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\bin\Debug\net10.0\KomGåSystem.pdb
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\KomGåSystem.dll
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\refint\KomGåSystem.dll
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\KomGåSystem.pdb
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\KomGåSystem.genruntimeconfig.cache
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\ref\KomGåSystem.dll
+C:\Users\Baile\OneDrive\Desktop\Hydac\HydacTeamA4\KomGåSystem\obj\Debug\net10.0\KomG_Sys.5303F6C0.Up2Date

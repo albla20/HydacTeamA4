@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\KomGåSystem.csproj": {}
+    "C:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\KomGåSystem.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\KomGåSystem.csproj": {
+    "C:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\KomGåSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\KomGåSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\KomGåSystem.csproj",
         "projectName": "KomGåSystem",
-        "projectPath": "c:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\KomGåSystem.csproj",
+        "projectPath": "C:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\KomGåSystem.csproj",
         "packagesPath": "C:\\Users\\Baile\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\obj\\",
+        "outputPath": "C:\\Users\\Baile\\OneDrive\\Desktop\\Hydac\\HydacTeamA4\\KomGåSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
