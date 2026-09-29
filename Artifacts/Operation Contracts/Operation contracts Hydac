@@ -1,0 +1,128 @@
+# Operation Contracts – Komme/gå-system til HYDAC
+
+```
+Medarbejder                      Gæst
+- Medarbejder ID                 - Navn
+- Navn                           - Firma
+- Er Til Stede                   - Er Til Stede
+- Ankomst Tidspunkt               - Ankomst Tidspunkt
+- Afgangs Tidspunkt               - Afgangs Tidspunkt
+- Adminstrator                   - Sikkerheds folder udleveret
+- Lokale
+
+Medarbejder "1" -- "0..*" Gæst : er ansvarlig for
+```
+
+---
+
+## CO1: tjekIndMedarbejder (UC1)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `tjekInd` |
+| **Cross References** | UC1 – Tjek medarbejder ind |
+| **Preconditions** | Medarbejderen findes i systemet som stamdata. Medarbejderen er ikke allerede tjekket ind (`Er Til Stede` = falsk). |
+| **Postconditions** | – Medarbejderens `Ankomst Tidspunkt` blev sat til det aktuelle tidspunkt (*attribute modification*).<br>– Medarbejderens `Er Til Stede` blev sat til sand (*attribute modification*). |
+
+---
+
+## CO2: tjekUdMedarbejder (UC2)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `tjekUdMedarbejder(id: String)` |
+| **Cross References** | UC2 – Tjek medarbejder ud |
+| **Preconditions** | Medarbejderen findes i systemet. Medarbejderen er aktuelt tjekket ind (`Er Til Stede` = sand). |
+| **Postconditions** | – Medarbejderens `Afgangs Tidspunkt` blev sat til det aktuelle tidspunkt (*attribute modification*).<br>– Medarbejderens `Er Til Stede` blev sat til falsk (*attribute modification*). |
+
+---
+
+## CO3: opretMedarbejder (UC4, gren "Opret ny")
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `opretMedarbejder(navn: String, afdeling: String, brugernavn: String, kodeord: String)` |
+| **Cross References** | UC4 – Opret/rediger medarbejder |
+| **Preconditions** | Brugeren er logget ind som administrator (`Adminstrator` = sand). Det angivne brugernavn er ikke allerede i brug. |
+| **Postconditions** | – En ny Medarbejder-instans *m* blev oprettet (*instance creation*).<br>– *m*.`Medarbejder ID` blev tildelt en unik værdi (*attribute modification*).<br>– *m*.`Navn` blev sat til `navn` (*attribute modification*).<br>– *m*.`Er Til Stede` blev sat til falsk (*attribute modification*). |
+
+---
+
+## CO4: redigerMedarbejder (UC4, gren "Rediger eksisterende")
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `redigerMedarbejder(id: String, navn: String, afdeling: String)` |
+| **Cross References** | UC4 – Opret/rediger medarbejder |
+| **Preconditions** | Medarbejderen med det angivne ID findes i systemet. Brugeren er logget ind som administrator. |
+| **Postconditions** | – Den fundne medarbejders `Navn` blev ændret til `navn` (*attribute modification*). |
+
+---
+
+## CO5: registrerGæst (UC5)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `registrerGæst(navn: String, firma: String, ansvarlig: Medarbejder)` |
+| **Cross References** | UC5 – Registrer gæst ved ankomst |
+| **Preconditions** | Den ansvarlige medarbejder er logget ind og tjekket ind (`Er Til Stede` = sand). |
+| **Postconditions** | – En ny Gæst-instans *g* blev oprettet (*instance creation*).<br>– *g*.`Navn` blev sat til `navn` (*attribute modification*).<br>– *g*.`Firma` blev sat til `firma` (*attribute modification*).<br>– *g*.`Ankomst Tidspunkt` blev sat til det aktuelle tidspunkt (*attribute modification*).<br>– *g*.`Er Til Stede` blev sat til sand (*attribute modification*).<br>– *g*.`Sikkerheds folder udleveret` blev sat til falsk (*attribute modification*).<br>– *g* blev associeret med den ansvarlige medarbejder via "er ansvarlig for" (*association formed*). |
+
+---
+
+## CO6: tjekUdGæst (UC6)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `tjekUdGæst(navn: String)` |
+| **Cross References** | UC6 – Registrer gæstens afgang |
+| **Preconditions** | Gæsten findes og er registreret som til stede (`Er Til Stede` = sand). Gæsten er associeret med den medarbejder, der udfører handlingen, via "er ansvarlig for". |
+| **Postconditions** | – Gæstens `Afgangs Tidspunkt` blev sat til det aktuelle tidspunkt (*attribute modification*).<br>– Gæstens `Er Til Stede` blev sat til falsk (*attribute modification*). |
+
+---
+
+## CO7: markerSikkerhedsfolderUdleveret (UC7)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `markerSikkerhedsfolderUdleveret(navn: String)` |
+| **Cross References** | UC7 – Marker sikkerhedsfolder udleveret |
+| **Preconditions** | Gæsten findes i systemet og er registreret. |
+| **Postconditions** | – Gæstens `Sikkerheds folder udleveret` blev sat til sand (*attribute modification*). |
+
+---
+
+## Operationer uden kontrakt: UC3, UC8 og hentMineGæster (UC6)
+
+`visTilStede()`, `søgPerson(navn)` og `hentMineGæster()` er rene forespørgsler.
+De ændrer intet i domænemodellens objekter, og postbetingelser beskriver
+netop kun *tilstandsændringer* (Larman, s. 184). Uden en ændring er der intet
+at skrive en postbetingelse om, så disse tre får ikke deres egen kontrakt —
+det er også hvad Larman selv gør i sit eget eksempel (han skriver kun
+kontrakter for `enterItem`, `endSale` og `makePayment`, ikke for rene visninger).
+
+Larman skriver desuden direkte: *"If developers can comfortably understand
+what to do without them, then avoid writing contracts"* (s. 188) — kontrakter
+er kun værd at skrive, når effekten ikke er indlysende af use casens tekst.
+`opretMedarbejder` og `registrerGæst` er skrevet fuldt ud her, fordi de opretter
+nye objekter og relationer (den del, der ifølge Larman oftest glemmes, s. 189).
+`tjekIndMedarbejder`, `tjekUdMedarbejder` og `markerSikkerhedsfolderUdleveret`
+er simple nok til, at I kan overveje at undlade dem — jeg har taget dem med
+for fuldstændighedens skyld, siden opgaven beder om én pr. use case.
+
+---
+
+## Uoverensstemmelser med jeres domænemodel
+
+Da jeg holdt kontrakterne op mod domænemodellen, fandt jeg to huller
+(Larman opfordrer eksplicit til at opdatere domænemodellen undervejs, s. 187):
+
+1. **`Afdeling` mangler.** UC4's hovedscenarie nævner "evt. afdeling", og
+   koden har attributten, men den står ikke i jeres domænemodel. Tilføj
+   `Afdeling` til `Medarbejder`, eller fjern den fra CO4, hvis den ikke skal
+   være en del af stamdata.
+2. **`Lokale` bruges ikke af nogen operation.** Attributten står på
+   `Medarbejder`, men ingen af de otte use cases sætter eller læser den for
+   en medarbejder — kun UC3's tekst nævner lokale i visningen af gæster.
+   Overvej om `Lokale` hører til på `Gæst` i stedet, eller om det skal være
+   et selvstændigt begreb, som vi diskuterede ved SSD'et for UC3.
