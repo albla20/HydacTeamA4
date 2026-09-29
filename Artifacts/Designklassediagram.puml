@@ -26,14 +26,14 @@ class Medarbejder {
   - afgangstid : DateTime
   - status : String
   + <<get>> IsAdminstrator : boolean
-  + tjekInd() : void
-  + tjekUd() : void
-  + erTilStede() : boolean
-  + hentStatus() : String
-  + logInd() : boolean
-  + opretStamdata(navn: String, afdeling: String) : void
-  + redigerStamdata(navn: String, afdeling: String) : void
-  + erVærtFor(gæst: Gæst) : boolean
+  + TjekInd() : void
+  + TjekUd() : void
+  + ErTilStede() : boolean
+  + HentStatus() : String
+  + LogInd() : boolean
+  + OpretMedarbejder(navn: String, afdeling: String) : void
+  + RedigerMedarbejder(navn: String, afdeling: String) : void
+  + ErVærtFor(gæst: Gæst) : boolean
 }
 
 class Gæst {
@@ -43,12 +43,12 @@ class Gæst {
   - ankomsttid : DateTime
   - afgangstid : DateTime
   - status : String
-  + tjekInd() : void
-  + tjekUd() : void
-  + erTilStede() : boolean
-  + hentStatus() : String
-  + markerSikkerhedsfolderUdleveret() : void
-  + hentAnsvarlig() : Medarbejder
+  + TjekInd() : void
+  + TjekUd() : void
+  + ErTilStede() : boolean
+  + HentStatus() : String
+  + MarkerSikkerhedsfolderUdleveret() : void
+  + HentAnsvarlig() : Medarbejder
 }
 
 
