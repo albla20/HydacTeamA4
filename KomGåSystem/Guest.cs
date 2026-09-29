@@ -11,19 +11,9 @@ namespace KomGåSystem
         private string _name;
         //  arrivalTime 
         //  departureTime
-        private string _status;
-        public void CheckIn()
-        {
 
-        }
-        public void CheckOut()
-        {
+        public bool IsPresent { get; set; }
 
-        }
-        public bool IsPresent()
-        {
-
-        }
         public string GetStatus()
         {
 
