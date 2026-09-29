@@ -8,13 +8,12 @@ hide emptymembers
 class KomGåSystem {
   + tjekIndMedarbejder(id: String) : void
   + tjekUdMedarbejder(id: String) : void
-  + visTilStede() : List<Person>
+  + visTilStede() : List
   + opretMedarbejder(navn: String, afdeling: String) : Medarbejder
   + redigerMedarbejder(id: String, navn: String, afdeling: String) : void
   + registrerGæst(navn: String, firma: String, ansvarlig: Medarbejder) : Gæst
   + tjekUdGæst(navn: String) : void
   + markerSikkerhedsfolderUdleveret(navn: String) : void
-  + søgPerson(navn: String) : Person
 }
 
 class Medarbejder {
@@ -24,15 +23,12 @@ class Medarbejder {
   - navn : String
   - ankomsttid : DateTime
   - afgangstid : DateTime
-  - status : String
   + <<get>> IsAdminstrator : boolean
-  + TjekInd() : void
-  + TjekUd() : void
+  + TjekIndGæst() : void
+  + TjekUdGæst() : void
   + ErTilStede() : boolean
   + HentStatus() : String
   + LogInd() : boolean
-  + OpretMedarbejder(navn: String, afdeling: String) : void
-  + RedigerMedarbejder(navn: String, afdeling: String) : void
   + ErVærtFor(gæst: Gæst) : boolean
 }
 
@@ -42,7 +38,6 @@ class Gæst {
   - navn : String
   - ankomsttid : DateTime
   - afgangstid : DateTime
-  - status : String
   + TjekInd() : void
   + TjekUd() : void
   + ErTilStede() : boolean
@@ -54,9 +49,5 @@ class Gæst {
 
 KomGåSystem "1" -- "0..*" Medarbejder : administrerer 
 KomGåSystem "1" -- "0..*" Gæst : administrerer 
-
-
-
-
 
 @enduml
