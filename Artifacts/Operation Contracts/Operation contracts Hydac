@@ -30,7 +30,7 @@ Medarbejder "1" -- "0..*" Gæst : er ansvarlig for
 
 | Felt | Indhold |
 |---|---|
-| **Operation** | `tjekUdMedarbejder(id: String)` |
+| **Operation** | `tjekUd` |
 | **Cross References** | UC2 – Tjek medarbejder ud |
 | **Preconditions** | Medarbejderen findes i systemet. Medarbejderen er aktuelt tjekket ind (`Er Til Stede` = sand). |
 | **Postconditions** | – Medarbejderens `Afgangs Tidspunkt` blev sat til det aktuelle tidspunkt (*attribute modification*).<br>– Medarbejderens `Er Til Stede` blev sat til falsk (*attribute modification*). |
@@ -95,34 +95,7 @@ Medarbejder "1" -- "0..*" Gæst : er ansvarlig for
 ## Operationer uden kontrakt: UC3, UC8 og hentMineGæster (UC6)
 
 `visTilStede()`, `søgPerson(navn)` og `hentMineGæster()` er rene forespørgsler.
-De ændrer intet i domænemodellens objekter, og postbetingelser beskriver
-netop kun *tilstandsændringer* (Larman, s. 184). Uden en ændring er der intet
-at skrive en postbetingelse om, så disse tre får ikke deres egen kontrakt —
-det er også hvad Larman selv gør i sit eget eksempel (han skriver kun
-kontrakter for `enterItem`, `endSale` og `makePayment`, ikke for rene visninger).
+De ændrer intet i domænemodellens objekter, og postbetingelser.
 
-Larman skriver desuden direkte: *"If developers can comfortably understand
-what to do without them, then avoid writing contracts"* (s. 188) — kontrakter
-er kun værd at skrive, når effekten ikke er indlysende af use casens tekst.
-`opretMedarbejder` og `registrerGæst` er skrevet fuldt ud her, fordi de opretter
-nye objekter og relationer (den del, der ifølge Larman oftest glemmes, s. 189).
-`tjekIndMedarbejder`, `tjekUdMedarbejder` og `markerSikkerhedsfolderUdleveret`
-er simple nok til, at I kan overveje at undlade dem — jeg har taget dem med
-for fuldstændighedens skyld, siden opgaven beder om én pr. use case.
 
 ---
-
-## Uoverensstemmelser med jeres domænemodel
-
-Da jeg holdt kontrakterne op mod domænemodellen, fandt jeg to huller
-(Larman opfordrer eksplicit til at opdatere domænemodellen undervejs, s. 187):
-
-1. **`Afdeling` mangler.** UC4's hovedscenarie nævner "evt. afdeling", og
-   koden har attributten, men den står ikke i jeres domænemodel. Tilføj
-   `Afdeling` til `Medarbejder`, eller fjern den fra CO4, hvis den ikke skal
-   være en del af stamdata.
-2. **`Lokale` bruges ikke af nogen operation.** Attributten står på
-   `Medarbejder`, men ingen af de otte use cases sætter eller læser den for
-   en medarbejder — kun UC3's tekst nævner lokale i visningen af gæster.
-   Overvej om `Lokale` hører til på `Gæst` i stedet, eller om det skal være
-   et selvstændigt begreb, som vi diskuterede ved SSD'et for UC3.
