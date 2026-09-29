@@ -25,6 +25,7 @@ class Medarbejder {
   - ankomsttid : DateTime
   - afgangstid : DateTime
   - status : String
+  + <<get>> IsAdminstrator : boolean
   + tjekInd() : void
   + tjekUd() : void
   + erTilStede() : boolean
@@ -50,12 +51,7 @@ class Gæst {
   + hentAnsvarlig() : Medarbejder
 }
 
-class Administrator {
-  + userName : String
-  + password : String
-  + login() : boolean
-}
-KomGåSystem "1" -- "0..*" Administrator : administrerer
+
 KomGåSystem "1" -- "0..*" Medarbejder : administrerer 
 KomGåSystem "1" -- "0..*" Gæst : administrerer 
 

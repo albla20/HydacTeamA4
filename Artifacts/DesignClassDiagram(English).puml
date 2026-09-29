@@ -25,6 +25,7 @@ class Employee {
   - arrivalTime : DateTime
   - departureTime : DateTime
   - status : String
+  + <<get>> IsAdmin : boolean
   + checkIn() : void
   + checkOut() : void
   + isPresent() : boolean
@@ -50,12 +51,6 @@ class Guest {
   + getHost() : Employee
 }
 
-class Administrator {
-  + userName : String
-  + password : String
-  + login() : boolean
-}
-CheckInSystem "1" -- "0..*" Administrator : manages
 CheckInSystem "1" -- "0..*" Employee : manages
 CheckInSystem "1" -- "0..*" Guest : manages
 
