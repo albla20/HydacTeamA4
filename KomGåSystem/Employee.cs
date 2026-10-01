@@ -11,12 +11,13 @@ namespace KomGåSystem
         private string _department;
         private string _username;
         private string _name;
-        //private dateTime 
-        //private departureTime
+        private DateTime _arrivalTime;
+        private DateTime _departureTime;
+        private bool _isLoggedIn;
+
         public bool IsAdmin {get; }
         public bool IsLoggedIn { get; set; }
 
-        private bool _isLoggedIn;
         public void CheckInGuest()
         {
 
