@@ -27,6 +27,12 @@ namespace KomGåSystem
         //backing field i baggrunden!!
         public bool IsPresent { get; set; }
 
+        public DateTime DepartureTime
+        {
+            get => _departureTime;
+
+            set => _departureTime = value;
+        }
         public string GetStatus()
         {
             string safetyFolderDA;

@@ -15,16 +15,39 @@ namespace KomGåSystem
         private DateTime _departureTime;
         private bool _isLoggedIn;
 
+        public Employee(string name, string username, string employeeID, string department, bool isAdmin = false)
+        {
+            _name = name;
+            _username = username;
+            _employeeID = employeeID;
+            _department = department;
+            IsAdmin = isAdmin;
+        }
+
         public bool IsAdmin {get; }
         public bool IsLoggedIn { get; set; }
 
-        public void CheckInGuest()
+        public Guest CheckInGuest()
         {
+            Console.WriteLine("Indtast navn på gæst: ");
+            string nameGuest = Console.ReadLine();
+            Console.WriteLine("Indtast firmanavn: ");
+            string nameCompany = Console.ReadLine();
+            Console.WriteLine("Sikkerhedsfolder J/N");
+            char safetyFolderChar = Console.ReadKey().KeyChar;
 
+            //Vi antager at alt andet end J er et Nej
+            bool safetyFolderBool = false;
+            if (safetyFolderChar == 'J')
+                safetyFolderBool = true;
+
+            Guest newGuest = new(nameGuest, nameCompany, this, safetyFolderBool);
+
+            return newGuest;
         }
-        public void CheckOutGuest()
+        public void CheckOutGuest(Guest checkOutGuest)
         {
-
+            checkOutGuest 
         }
         public bool IsPresent()
         {

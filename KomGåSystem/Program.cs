@@ -1,9 +1,15 @@
 ﻿namespace KomGåSystem
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            const int MAX_EMPLOYEES = 100;
+            const int MAX_GUEST = 50;
+
+            Employee[] allEmployees = new Employee[MAX_EMPLOYEES];
+            Guest[] allGuest = new Guest[MAX_GUEST];
+
             bool running = true;
 
             while (running)
@@ -13,7 +19,7 @@
                 Console.WriteLine("*****************");
                 Console.WriteLine("");
                 Console.WriteLine("1. Log ind som medarbejder");
-                Console.WriteLine("2. se personer til stede");
+                Console.WriteLine("2. Se personer til stede");
                 Console.WriteLine("0. afslut");
                 Console.Write("vælg: ");
 
