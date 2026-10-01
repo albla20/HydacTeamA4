@@ -27,6 +27,8 @@ namespace KomGåSystem
         public bool IsAdmin {get; }
         public bool IsLoggedIn { get; set; }
 
+        public bool IsCheckedIn { get; set; }
+
         public Guest CheckInGuest()
         {
             Console.WriteLine("Indtast navn på gæst: ");
@@ -47,19 +49,32 @@ namespace KomGåSystem
         }
         public void CheckOutGuest(Guest checkOutGuest)
         {
-            checkOutGuest 
+            checkOutGuest.DepartureTime = DateTime.Now;
+            checkOutGuest.IsPresent = false;
         }
         public bool IsPresent()
         {
-
+            return IsCheckedIn;
         }
         public string GetStatus()
         {
+            string isAdminDA;
+            if (IsAdmin)
+                isAdminDA = "Ja";
+            else
+                isAdminDA = "Nej";
 
+            return $"Navn: {_name}\nBrugernavn: {_username}\nID: {_employeeID}\nAfdeling: {_department}\nAdim: {isAdminDA}";
         }
-        public Guest[] IsHostFor()
+        public void IsHostFor(Guest[] allGuest)
         {
-
+            foreach (Guest oneGuest in allGuest)
+            {
+                if (oneGuest.Host == this)
+                {
+                    Console.WriteLine(oneGuest.ToString());
+                }
+            }
         }
         
 

@@ -33,6 +33,12 @@ namespace KomGåSystem
 
             set => _departureTime = value;
         }
+
+        public Employee Host
+        {
+            get => _host;
+            set => _host = value;
+        } 
         public string GetStatus()
         {
             string safetyFolderDA;
@@ -47,9 +53,11 @@ namespace KomGåSystem
         {
             _safetyFolderHandedOut = true;
         }
-        public Employee GetHost()
+
+        public override string ToString()
         {
-            return _host;
+            return $"{_name}";
         }
+
     }
 }
