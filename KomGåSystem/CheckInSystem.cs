@@ -35,15 +35,15 @@ namespace KomGåSystem
             }
         }
 
-        public Employee CreateEmployee(string name, string department)
+        public Employee CreateEmployee(string name, string department, bool giveAdmin = false)
         {
-            if (_employeeCount >= _employees.Length) return null;
 
             string id = "E" + (_employeeCount + 1).ToString("D4");
             string username = GenerateUsername(name);
 
-            var emp = new Employee(name, username, department ?? string.Empty);
-            _employees[_employeeCount++] = emp;
+            Employee emp = new(name, username, department, giveAdmin);
+            _employees[_employeeCount] = emp;
+            _employeeCount++;
             return emp;
         }
 
@@ -94,12 +94,21 @@ namespace KomGåSystem
 
         public void EditEmployee(Employee employeeToEdit)
         {
-
+            Console.Write("Indtast nyt navn: ");
+            string newName = Console.ReadLine();
+            Console.Write("Indtast ny afdeling: ");
+            string newDepartment = Console.ReadLine();
+            Console.WriteLine("* * *");
+            Console.WriteLine("Ændre:");
+            Console.WriteLine($"{employeeToEdit.Name} -> {newName}");
+            Console.WriteLine($"{employeeToEdit.Department} -> {newDepartment}");
+            employeeToEdit.Name = newName;
+            employeeToEdit.Department = newDepartment;
         }
        
         public Guest RegisterGuests(string name, string company, Employee host)
         {
-            var g = new Guest(name, company ?? string.Empty, host, false);
+            Guest g = new(name, company ?? string.Empty, host, false);
             _guests[_guestCount++] = g;
             return g;
         }

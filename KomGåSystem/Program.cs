@@ -4,24 +4,22 @@
     {
         static void Main(string[] args)
         {
-            const int MAX_EMPLOYEES = 100;
-            const int MAX_GUEST = 50;
 
-            Employee[] allEmployees = new Employee[MAX_EMPLOYEES];
-            Guest[] allGuest = new Guest[MAX_GUEST];
+            CheckInSystem komOgGåSystem = new();
+            komOgGåSystem.CreateEmployee("Admin Jensen", "IT", true);
 
             bool running = true;
 
             while (running)
             {
                 Console.Clear();
-                Console.WriteLine("Hydac Main Menu");
+                Console.WriteLine("KomOgGåSystem");
                 Console.WriteLine("*****************");
                 Console.WriteLine("");
                 Console.WriteLine("1. Log ind som medarbejder");
                 Console.WriteLine("2. Se personer til stede");
-                Console.WriteLine("0. afslut");
-                Console.Write("vælg: ");
+                Console.WriteLine("0. Afslut");
+                Console.Write(": ");
 
                 string? vælg = Console.ReadLine();
                 
