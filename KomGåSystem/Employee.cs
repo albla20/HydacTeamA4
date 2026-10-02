@@ -40,7 +40,7 @@ namespace KomGåSystem
             get => _department;
             set => _department = value;
         }
-
+        // Properties tilføjet så vi nemt kan tilgå dem i andre klasser.
         public DateTime ArrivalTime
         {
             get => _arrivalTime;
