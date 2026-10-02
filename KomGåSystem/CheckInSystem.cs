@@ -6,9 +6,9 @@ namespace KomGåSystem
 {
     public class CheckInSystem
     {
-        private  Employee[] _employees;
+        private Employee[] _employees;
         private int _employeeCount;
-        private  Guest[] _guests;
+        private Guest[] _guests;
         private int _guestCount;
 
         public CheckInSystem(int maxEmployees = 100, int maxGuests = 50)
@@ -18,54 +18,56 @@ namespace KomGåSystem
             _guests = new Guest[maxGuests];
             _guestCount = 0;
         }
-        public void showPresent()
+        public void ShowPresent()
         {
-            int ec = 0;
-            for (int i = 0; i < _employeeCount; i++) if (_employees[i].IsCheckedIn) ec++;
-            var emps = new Employee[ec];
-            int ei = 0;
-            for (int i = 0; i < _employeeCount; i++) if (_employees[i].IsCheckedIn) emps[ei++] = _employees[i];
+            Console.WriteLine("Medarbejdere tilstede:");
+            for (int i = 0; i < _employeeCount; i++)
+            {
+                if (_employees[i].IsCheckedIn)
+                    Console.WriteLine(_employees[i]);
+            }
 
-            int gc = 0;
-            for (int i = 0; i < _guestCount; i++) if (_guests[i].IsPresent) gc++;
-            var guests = new Guest[gc];
-            int gi = 0;
-            for (int i = 0; i < _guestCount; i++) if (_guests[i].IsPresent) guests[gi++] = _guests[i];
-
+            Console.WriteLine("Gæster tilstede:");
+            for (int i = 0; i < _guestCount; i++)
+            {
+                if (_guests[i].IsPresent)
+                    Console.WriteLine(_guests[i]);
+            }
         }
 
-        public Employee createEmployee(string name, string department)
+        public Employee CreateEmployee(string name, string department)
         {
             if (_employeeCount >= _employees.Length) return null;
 
             string id = "E" + (_employeeCount + 1).ToString("D4");
             string username = GenerateUsername(name);
 
-            var emp = new Employee(name, username, id, department ?? string.Empty);
+            var emp = new Employee(name, username, department ?? string.Empty);
             _employees[_employeeCount++] = emp;
             return emp;
         }
-        public Employee FindEmployeeByUsername(string username)
+
+        public Employee? FindEmployeeByUsername(string username)
         {
             for (int i = 0; i < _employeeCount; i++)
             {
-                var e = _employees[i];
+                Employee e = _employees[i];
                 if (e != null && string.Equals(e.Username, username, StringComparison.OrdinalIgnoreCase))
                     return e;
             }
             return null;
         }
 
-        public Employee FindEmployeeById(string id)
-        {
-            for (int i = 0; i < _employeeCount; i++)
-            {
-                var e = _employees[i];
-                if (e != null && string.Equals(e.EmployeeID, id, StringComparison.OrdinalIgnoreCase))
-                    return e;
-            }
-            return null;
-        }
+        //public Employee? FindEmployeeById(string id)
+        //{
+        //    for (int i = 0; i < _employeeCount; i++)
+        //    {
+        //        var e = _employees[i];
+        //        if (e != null && string.Equals(e.EmployeeID, id, StringComparison.OrdinalIgnoreCase))
+        //            return e;
+        //    }
+        //    return null;
+        //}
 
         public Employee Login(string username)
         {
@@ -90,20 +92,19 @@ namespace KomGåSystem
             e.DepartureTime = DateTime.Now;
         }
 
-        public void editEmployee(string id, string name, string department)
+        public void EditEmployee(Employee employeeToEdit)
         {
 
         }
        
-        public Guest registerGuests(string name, string company, Employee host)
+        public Guest RegisterGuests(string name, string company, Employee host)
         {
-            if (_guestCount >= _guests.Length) return null;
             var g = new Guest(name, company ?? string.Empty, host, false);
             _guests[_guestCount++] = g;
             return g;
         }
 
-        public void checkOutGuest(string name)
+        public void CheckOutGuest(string name)
         {
             for (int i = 0; i < _guestCount; i++)
             {
@@ -117,7 +118,7 @@ namespace KomGåSystem
             }
         }
 
-        public void markSafetyFolderHandedOut(string name)
+        public void MarkSafetyFolderHandedOut(string name)
         {
             for (int i = 0; i < _guestCount; i++)
             {

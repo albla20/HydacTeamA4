@@ -7,7 +7,6 @@ namespace KomGåSystem
 {
     public class Employee
     {
-        private string _employeeID;
         private string _department;
         private string _username;
         private string _name;
@@ -15,15 +14,13 @@ namespace KomGåSystem
         private DateTime _departureTime;
         private bool _isLoggedIn;
 
-        public Employee(string name, string username, string employeeID, string department, bool isAdmin = false)
+        public Employee(string name, string username, string department, bool isAdmin = false)
         {
             _name = name;
             _username = username;
-            _employeeID = employeeID;
             _department = department;
             IsAdmin = isAdmin;
         }
-        public string EmployeeID => _employeeID;
         public string Username => _username;
         public bool IsLoggedIn { get; set; }
         public bool IsCheckedIn { get; set; }
@@ -88,7 +85,7 @@ namespace KomGåSystem
             else
                 isAdminDA = "Nej";
 
-            return $"Navn: {_name}\nBrugernavn: {_username}\nID: {_employeeID}\nAfdeling: {_department}\nAdim: {isAdminDA}";
+            return $"Navn: {_name}\nBrugernavn: {_username}\nAfdeling: {_department}\nAdim: {isAdminDA}";
         }
         public void IsHostFor(Guest[] allGuest)
         {
