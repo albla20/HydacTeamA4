@@ -1,22 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\maje0\\Desktop\\HydacTeamA4\\",
+  "WorkspaceRootPath": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\maje0\\Desktop\\HydacTeamA4\\KomG\u00E5System\\Employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\KomG\u00E5System\\CheckInSystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KomG\u00E5System\\CheckInSystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\KomG\u00E5System\\Employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KomG\u00E5System\\Employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Afgr\u00E6nsning.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownPreview"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownPreview",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Afgr\u00E6nsning.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownPreview"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Usecase_01.md||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Usecase_01.md||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Usecase_01.md||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\maje0\\Desktop\\HydacTeamA4\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
@@ -27,19 +34,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CheckInSystem.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\KomG\u00E5System\\CheckInSystem.cs",
+              "RelativeDocumentMoniker": "KomG\u00E5System\\CheckInSystem.cs",
+              "ToolTip": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\KomG\u00E5System\\CheckInSystem.cs",
+              "RelativeToolTip": "KomG\u00E5System\\CheckInSystem.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T07:19:19.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\maje0\\Desktop\\HydacTeamA4\\KomG\u00E5System\\Employee.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\KomG\u00E5System\\Employee.cs",
               "RelativeDocumentMoniker": "KomG\u00E5System\\Employee.cs",
-              "ToolTip": "C:\\Users\\maje0\\Desktop\\HydacTeamA4\\KomG\u00E5System\\Employee.cs",
+              "ToolTip": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\KomG\u00E5System\\Employee.cs",
               "RelativeToolTip": "KomG\u00E5System\\Employee.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -48,48 +72,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Afgr\u00E6nsning.md [Preview]",
               "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md",
-              "RelativeDocumentMoniker": "..\\..\\..\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md",
+              "RelativeDocumentMoniker": "Afgr\u00E6nsning.md",
               "ToolTip": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md [Preview]",
-              "RelativeToolTip": "..\\..\\..\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md [Preview]",
+              "RelativeToolTip": "Afgr\u00E6nsning.md [Preview]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2026-09-15T10:11:14.926Z",
               "EditorCaption": " [Preview]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Afgr\u00E6nsning.md",
               "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md",
-              "RelativeDocumentMoniker": "..\\..\\..\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md",
+              "RelativeDocumentMoniker": "Afgr\u00E6nsning.md",
               "ToolTip": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md",
-              "RelativeToolTip": "..\\..\\..\\alexa\\source\\repos\\HydacTeamA4\\Afgr\u00E6nsning.md",
+              "RelativeToolTip": "Afgr\u00E6nsning.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-09-15T10:10:29.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T10:10:29.559Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Usecase_01.md",
               "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Usecase_01.md",
-              "RelativeDocumentMoniker": "..\\..\\..\\alexa\\source\\repos\\HydacTeamA4\\Usecase_01.md",
+              "RelativeDocumentMoniker": "Usecase_01.md",
               "ToolTip": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\Usecase_01.md",
-              "RelativeToolTip": "..\\..\\..\\alexa\\source\\repos\\HydacTeamA4\\Usecase_01.md",
+              "RelativeToolTip": "Usecase_01.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2026-09-15T10:00:04.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\maje0\\Desktop\\HydacTeamA4\\README.md",
+              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\README.md",
               "RelativeDocumentMoniker": "README.md",
-              "ToolTip": "C:\\Users\\maje0\\Desktop\\HydacTeamA4\\README.md",
+              "ToolTip": "C:\\Users\\alexa\\source\\repos\\HydacTeamA4\\README.md",
               "RelativeToolTip": "README.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
