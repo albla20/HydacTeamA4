@@ -23,11 +23,35 @@ namespace KomGåSystem
             _department = department;
             IsAdmin = isAdmin;
         }
-
-        public bool IsAdmin {get; }
+        public string EmployeeID => _employeeID;
+        public string Username => _username;
         public bool IsLoggedIn { get; set; }
-
         public bool IsCheckedIn { get; set; }
+        public bool IsAdmin { get; }
+
+        public string Name
+        {
+            get => _name;
+            set => _name = value;
+        }
+
+        public string Department
+        {
+            get => _department;
+            set => _department = value;
+        }
+
+        public DateTime ArrivalTime
+        {
+            get => _arrivalTime;
+            set => _arrivalTime = value;
+        }
+
+        public DateTime DepartureTime
+        {
+            get => _departureTime;
+            set => _departureTime = value;
+        }
 
         public Guest CheckInGuest()
         {
