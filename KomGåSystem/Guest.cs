@@ -38,7 +38,10 @@ namespace KomGåSystem
         {
             get => _host;
             set => _host = value;
-        } 
+        }
+
+        public string Name => _name;
+
         public string GetStatus()
         {
             string safetyFolderDA;

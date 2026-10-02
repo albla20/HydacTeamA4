@@ -24,14 +24,14 @@ namespace KomGåSystem
             for (int i = 0; i < _employeeCount; i++)
             {
                 if (_employees[i].IsCheckedIn)
-                    Console.WriteLine(_employees[i]);
+                    Console.WriteLine(_employees[i].Name);
             }
 
             Console.WriteLine("Gæster tilstede:");
             for (int i = 0; i < _guestCount; i++)
             {
                 if (_guests[i].IsPresent)
-                    Console.WriteLine(_guests[i]);
+                    Console.WriteLine(_guests[i].Name);
             }
         }
 
@@ -55,6 +55,7 @@ namespace KomGåSystem
                 if (e != null && string.Equals(e.Username, username, StringComparison.OrdinalIgnoreCase))
                     return e;
             }
+            Console.WriteLine("Ingen medarbejdere med det brugernavn fundet");
             return null;
         }
 
@@ -69,11 +70,13 @@ namespace KomGåSystem
         //    return null;
         //}
 
-        public Employee Login(string username)
+        public Employee? Login(string username)
         {
-            var e = FindEmployeeByUsername(username);
-            if (e != null) e.IsLoggedIn = true;
-            return e;
+            Employee? employee = FindEmployeeByUsername(username);
+            // Following if-statement (null check), can also be written like this: employee?.IsLoggedIn = true;
+            if (employee is not null) 
+                employee.IsLoggedIn = true;
+            return employee;
         }
 
         public void CheckInEmployee(string username)
@@ -99,7 +102,7 @@ namespace KomGåSystem
             Console.Write("Indtast ny afdeling: ");
             string newDepartment = Console.ReadLine();
             Console.WriteLine("* * *");
-            Console.WriteLine("Ændre:");
+            Console.WriteLine("Ændret:");
             Console.WriteLine($"{employeeToEdit.Name} -> {newName}");
             Console.WriteLine($"{employeeToEdit.Department} -> {newDepartment}");
             employeeToEdit.Name = newName;
