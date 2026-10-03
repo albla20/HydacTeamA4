@@ -56,6 +56,7 @@ namespace KomGåSystem
                     return e;
             }
             Console.WriteLine("Ingen medarbejdere med det brugernavn fundet");
+            Console.ReadKey();
             return null;
         }
 

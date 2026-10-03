@@ -9,16 +9,10 @@ namespace KomGåSystem
         public static Menu SetupMainMenu()
         {
             Menu mainMenu = new("Hovedmenu");
-            string menuItemTitle;
 
-            menuItemTitle = "1. Log ind";
-            mainMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "2. Se personer tilstede";
-            mainMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "0. Afslut";
-            mainMenu.AddMenuItem(menuItemTitle);
+            mainMenu.AddMenuItem("1. Log ind");
+            mainMenu.AddMenuItem("2. Se personer tilstede");
+            mainMenu.AddMenuItem("0. Afslut");
 
             return mainMenu;
         }
@@ -26,28 +20,14 @@ namespace KomGåSystem
         public static Menu SetupUserMenu()
         {
             Menu userMenu = new("Menu");
-            string menuItemTitle;
 
-            menuItemTitle = "1. Check ind";
-            userMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "2. Check ud";
-            userMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "3. Check gæst ind";
-            userMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "4. Check gæst ud";
-            userMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "5. Marker sikkerhedsfolder udleveret";
-            userMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "6. Se personer tilstede";
-            userMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "0. Tilbage";
-            userMenu.AddMenuItem(menuItemTitle);
+            userMenu.AddMenuItem("1. Check ind");
+            userMenu.AddMenuItem("2. Check ud");
+            userMenu.AddMenuItem("3. Check gæst ind");
+            userMenu.AddMenuItem("4. Check gæst ud");
+            userMenu.AddMenuItem("5. Marker sikkerhedsfolder udleveret");
+            userMenu.AddMenuItem("6. Se personer tilstede");
+            userMenu.AddMenuItem("0. Tilbage");
 
             return userMenu;
         }
@@ -55,34 +35,16 @@ namespace KomGåSystem
         public static Menu SetupAdminMenu()
         {
             Menu adminMenu = new("Administrator Menu");
-            string menuItemTitle;
 
-            menuItemTitle = "1. Check ind";
-            adminMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "2. Check ud";
-            adminMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "3. Check gæst ind";
-            adminMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "4. Check gæst ud";
-            adminMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "5. Marker sikkerhedsfolder udleveret";
-            adminMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "6. Se personer tilstede";
-            adminMenu.AddMenuItem(menuItemTitle);
-            
-            menuItemTitle = "7. Tilføj medarbejder";
-            adminMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "8. Rediger medarbejder";
-            adminMenu.AddMenuItem(menuItemTitle);
-
-            menuItemTitle = "0. Tilbage";
-            adminMenu.AddMenuItem(menuItemTitle);
+            adminMenu.AddMenuItem("1. Check ind");
+            adminMenu.AddMenuItem("2. Check ud");
+            adminMenu.AddMenuItem("3. Check gæst ind");
+            adminMenu.AddMenuItem("4. Check gæst ud");
+            adminMenu.AddMenuItem("5. Marker sikkerhedsfolder udleveret");
+            adminMenu.AddMenuItem("6. Se personer tilstede");
+            adminMenu.AddMenuItem("7. Tilføj medarbejder");
+            adminMenu.AddMenuItem("8. Rediger medarbejder");
+            adminMenu.AddMenuItem("0. Tilbage");
 
             return adminMenu;
         }

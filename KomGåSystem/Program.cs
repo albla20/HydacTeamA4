@@ -114,6 +114,7 @@
                         Console.ReadKey();
                         break;
                     case 0:
+                        loggedInUser.IsLoggedIn = false;
                         return;
                     default:
                         break;
