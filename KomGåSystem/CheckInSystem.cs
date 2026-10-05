@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Linq;
 
 namespace KomGåSystem
 {
@@ -23,53 +24,49 @@ namespace KomGåSystem
             Console.WriteLine("Medarbejdere tilstede:");
             for (int i = 0; i < _employeeCount; i++)
             {
-                if (_employees[i].IsCheckedIn)
-                    Console.WriteLine(_employees[i].Name);
+                Employee emp = _employees[i];
+                if (emp == null) continue;
+                if (emp.IsCheckedIn)
+                    Console.WriteLine(emp.Name);
             }
 
             Console.WriteLine("Gæster tilstede:");
             for (int i = 0; i < _guestCount; i++)
             {
-                if (_guests[i].IsPresent)
-                    Console.WriteLine(_guests[i].Name);
+                Guest g = _guests[i];
+                if (g == null) continue;
+                if (g.IsPresent)
+                    Console.WriteLine(g.ToString());
             }
         }
 
         public Employee CreateEmployee(string name, string department, bool giveAdmin = false)
         {
+            if (string.IsNullOrWhiteSpace(name)) return null;
+            if (_employeeCount >= _employees.Length) return null;
 
             string id = "E" + (_employeeCount + 1).ToString("D4");
             string username = GenerateUsername(name);
 
-            Employee emp = new(name, username, department, giveAdmin);
+            Employee emp = new Employee(name, username, department ?? string.Empty, giveAdmin);
             _employees[_employeeCount] = emp;
             _employeeCount++;
             return emp;
         }
 
-        public Employee? FindEmployeeByUsername(string username)
+        public Employee FindEmployeeByUsername(string username)
         {
+            if (string.IsNullOrWhiteSpace(username)) return null;
             for (int i = 0; i < _employeeCount; i++)
             {
                 Employee e = _employees[i];
-                if (e != null && string.Equals(e.Username, username, StringComparison.OrdinalIgnoreCase))
+                if (e == null) continue;
+                if (string.Equals(e.Username, username, StringComparison.OrdinalIgnoreCase))
                     return e;
             }
-            Console.WriteLine("Ingen medarbejdere med det brugernavn fundet");
-            Console.ReadKey();
             return null;
         }
 
-        //public Employee? FindEmployeeById(string id)
-        //{
-        //    for (int i = 0; i < _employeeCount; i++)
-        //    {
-        //        var e = _employees[i];
-        //        if (e != null && string.Equals(e.EmployeeID, id, StringComparison.OrdinalIgnoreCase))
-        //            return e;
-        //    }
-        //    return null;
-        //}
 
         public Employee? Login(string username)
         {
@@ -82,7 +79,7 @@ namespace KomGåSystem
 
         public void CheckInEmployee(string username)
         {
-            var e = FindEmployeeByUsername(username);
+            Employee e = FindEmployeeByUsername(username);
             if (e == null) return;
             e.IsCheckedIn = true;
             e.ArrivalTime = DateTime.Now;
@@ -90,7 +87,7 @@ namespace KomGåSystem
 
         public void CheckOutEmployee(string username)
         {
-            var e = FindEmployeeByUsername(username);
+            Employee e = FindEmployeeByUsername(username);
             if (e == null) return;
             e.IsCheckedIn = false;
             e.DepartureTime = DateTime.Now;
@@ -98,30 +95,37 @@ namespace KomGåSystem
 
         public void EditEmployee(Employee employeeToEdit)
         {
-            Console.Write("Indtast nyt navn: ");
+            if (employeeToEdit == null) return;
+
+            Console.Write("Indtast nyt navn (eller tryk enter for at beholde): ");
             string newName = Console.ReadLine();
-            Console.Write("Indtast ny afdeling: ");
+            Console.Write("Indtast ny afdeling (eller tryk enter for at beholde): ");
             string newDepartment = Console.ReadLine();
-            Console.WriteLine("* * *");
-            Console.WriteLine("Ændret:");
-            Console.WriteLine($"{employeeToEdit.Name} -> {newName}");
-            Console.WriteLine($"{employeeToEdit.Department} -> {newDepartment}");
-            employeeToEdit.Name = newName;
-            employeeToEdit.Department = newDepartment;
+
+            if (!string.IsNullOrWhiteSpace(newName))
+                employeeToEdit.Name = newName;
+            if (newDepartment != null)
+                employeeToEdit.Department = newDepartment;
         }
-       
+
         public Guest RegisterGuests(string name, string company, Employee host)
         {
-            Guest g = new(name, company ?? string.Empty, host, false);
-            _guests[_guestCount++] = g;
+            if (string.IsNullOrWhiteSpace(name) || host == null) return null;
+            if (_guestCount >= _guests.Length) return null;
+
+            Guest g = new Guest(name, company ?? string.Empty, host, false);
+            _guests[_guestCount] = g;
+            _guestCount++;
             return g;
         }
 
         public void CheckOutGuest(string name)
         {
+            if (string.IsNullOrWhiteSpace(name)) return;
             for (int i = 0; i < _guestCount; i++)
             {
-                var g = _guests[i];
+                Guest g = _guests[i];
+                if (g == null) continue;
                 if (g.IsPresent && string.Equals(g.ToString(), name, StringComparison.OrdinalIgnoreCase))
                 {
                     g.DepartureTime = DateTime.Now;
@@ -133,9 +137,11 @@ namespace KomGåSystem
 
         public void MarkSafetyFolderHandedOut(string name)
         {
+            if (string.IsNullOrWhiteSpace(name)) return;
             for (int i = 0; i < _guestCount; i++)
             {
-                var g = _guests[i];
+                Guest g = _guests[i];
+                if (g == null) continue;
                 if (g.IsPresent && string.Equals(g.ToString(), name, StringComparison.OrdinalIgnoreCase))
                 {
                     g.MarkSafetyFolderHandedOut();
@@ -143,9 +149,10 @@ namespace KomGåSystem
                 }
             }
         }
+
         private string GenerateUsername(string name)
         {
-            return name.Trim().ToLowerInvariant().Replace(' ', '.');
+            return (name ?? string.Empty).Trim().ToLowerInvariant().Replace(' ', '.');
         }
     }
 }
