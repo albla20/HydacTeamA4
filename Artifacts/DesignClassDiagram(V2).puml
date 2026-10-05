@@ -54,6 +54,6 @@ class Guest {
 
 CheckInSystem --> "_employees\n0..*" Employee
 CheckInSystem --> "_guests\n0..*" Guest
-Guest "*" <-- "1" Employee : host
+Employee "1" -down-> "*" Guest : host
 
 @enduml
