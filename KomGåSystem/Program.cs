@@ -83,7 +83,7 @@
                         Console.Write("Indtast gæstens navn: ");
                         string guestName2 = Console.ReadLine();
                         komOgGåSystem.CheckOutGuest(guestName2);
-                        Console.WriteLine($"{guestName2} er nu checked ind");
+                        Console.WriteLine($"{guestName2} er nu checked ud");
                         Console.ReadKey();
                         break;
                     case 5:
