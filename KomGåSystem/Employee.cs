@@ -71,10 +71,7 @@ namespace KomGåSystem
             checkOutGuest.DepartureTime = DateTime.Now;
             checkOutGuest.IsPresent = false;
         }
-        public bool IsPresent()
-        {
-            return IsCheckedIn;
-        }
+
         public string GetStatus()
         {
             string isAdminDA;
