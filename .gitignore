@@ -1,2 +1,24 @@
 # Visual Studio cache/options
 .vs/
+
+# Build folders
+bin/
+obj/
+
+# Unit test results
+TestResults/
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# Visual Studio user files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Temporary files
+*.tmp
+*.log
