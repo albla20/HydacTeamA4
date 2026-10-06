@@ -1,0 +1,101 @@
+# Operation Contracts – Komme/gå-system til HYDAC
+
+```
+Medarbejder                      Gæst
+- Medarbejder ID                 - Navn
+- Navn                           - Firma
+- Er Til Stede                   - Er Til Stede
+- Ankomst Tidspunkt               - Ankomst Tidspunkt
+- Afgangs Tidspunkt               - Afgangs Tidspunkt
+- Adminstrator                   - Sikkerhedsfolder udleveret
+- Lokale
+
+Medarbejder "1" -- "0..*" Gæst : er ansvarlig for
+```
+
+---
+
+## CO1: TjekIndMedarbejder (UC1)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `TjekInd` |
+| **Cross References** | UC1 – Tjek medarbejder ind |
+| **Preconditions** | Medarbejderen findes i systemet som stamdata. Medarbejderen er ikke allerede tjekket ind (`Er Til Stede` = falsk). |
+| **Postconditions** | – Medarbejderens `Ankomst Tidspunkt` blev sat til det aktuelle tidspunkt (*attribute modification*).<br>– Medarbejderens `Er Til Stede` blev sat til sand (*attribute modification*). |
+
+---
+
+## CO2: TjekUdMedarbejder (UC2)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `TjekUd` |
+| **Cross References** | UC2 – Tjek medarbejder ud |
+| **Preconditions** | Medarbejderen findes i systemet. Medarbejderen er aktuelt tjekket ind (`Er Til Stede` = sand). |
+| **Postconditions** | – Medarbejderens `Afgangs Tidspunkt` blev sat til det aktuelle tidspunkt (*attribute modification*).<br>– Medarbejderens `Er Til Stede` blev sat til falsk (*attribute modification*). |
+
+---
+
+## CO3: OpretMedarbejder (UC4, gren "Opret ny")
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `OpretMedarbejder(navn: String, afdeling: String, brugernavn: String)` |
+| **Cross References** | UC4 – Opret/rediger medarbejder |
+| **Preconditions** | Brugeren er logget ind som administrator (`Adminstrator` = sand). Det angivne brugernavn er ikke allerede i brug. |
+| **Postconditions** | – En ny Medarbejder-instans *m* blev oprettet (*instance creation*).<br>– *m*.`Medarbejder ID` blev tildelt en unik værdi (*attribute modification*).<br>– *m*.`Navn` blev sat til `navn` (*attribute modification*).<br>– *m*.`Er Til Stede` blev sat til falsk (*attribute modification*). |
+
+---
+
+## CO4: RedigerMedarbejder (UC4, gren "Rediger eksisterende")
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `RedigerMedarbejder(id: String, navn: String, afdeling: String)` |
+| **Cross References** | UC4 – Opret/rediger medarbejder |
+| **Preconditions** | Medarbejderen med det angivne ID findes i systemet. Brugeren er logget ind som administrator. |
+| **Postconditions** | – Den fundne medarbejders `Navn` blev ændret til `navn` (*attribute modification*). |
+
+---
+
+## CO5: registrerGæst (UC5)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `RegistrerGæst(navn: String, firma: String, ansvarlig: Medarbejder)` |
+| **Cross References** | UC5 – Registrer gæst ved ankomst |
+| **Preconditions** | Den ansvarlige medarbejder er logget ind og tjekket ind (`Er Til Stede` = sand). |
+| **Postconditions** | – En ny Gæst-instans *g* blev oprettet (*instance creation*).<br>– *g*.`Navn` blev sat til `navn` (*attribute modification*).<br>– *g*.`Firma` blev sat til `firma` (*attribute modification*).<br>– *g*.`Ankomst Tidspunkt` blev sat til det aktuelle tidspunkt (*attribute modification*).<br>– *g*.`Er Til Stede` blev sat til sand (*attribute modification*).<br>– *g*.`Sikkerheds folder udleveret` blev sat til falsk (*attribute modification*).<br>– *g* blev associeret med den ansvarlige medarbejder via "er ansvarlig for" (*association formed*). |
+
+---
+
+## CO6: TjekUdGæst (UC6)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `TjekUdGæst(navn: String)` |
+| **Cross References** | UC6 – Registrer gæstens afgang |
+| **Preconditions** | Gæsten findes og er registreret som til stede (`Er Til Stede` = sand). Gæsten er associeret med den medarbejder, der udfører handlingen, via "er ansvarlig for". |
+| **Postconditions** | – Gæstens `Afgangs Tidspunkt` blev sat til det aktuelle tidspunkt (*attribute modification*).<br>– Gæstens `Er Til Stede` blev sat til falsk (*attribute modification*). |
+
+---
+
+## CO7: MarkerSikkerhedsfolderUdleveret (UC7)
+
+| Felt | Indhold |
+|---|---|
+| **Operation** | `MarkerSikkerhedsfolderUdleveret(navn: String)` |
+| **Cross References** | UC7 – Marker sikkerhedsfolder udleveret |
+| **Preconditions** | Gæsten findes i systemet og er registreret. |
+| **Postconditions** | – Gæstens `Sikkerheds folder udleveret` blev sat til sand (*attribute modification*). |
+
+---
+
+## Operationer uden kontrakt: UC3, UC8 og hentMineGæster (UC6)
+
+`VisTilStede()`, `SøgPerson(navn)` og `HentMineGæster()` er rene forespørgsler.
+De ændrer intet i domænemodellens objekter, og postbetingelser.
+
+
+---

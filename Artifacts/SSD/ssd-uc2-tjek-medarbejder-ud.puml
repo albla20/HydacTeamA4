@@ -1,0 +1,13 @@
+@startuml UC2
+title SSD: UC2 - Tjek medarbejder ud
+hide footbox
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+
+actor ": Medarbejder" as med #White
+participant ": KomGåSystem" as sys #White
+
+med -> sys : tjekUd
+sys --> med : bekræftelse
+
+@enduml

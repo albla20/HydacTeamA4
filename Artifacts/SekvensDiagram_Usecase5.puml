@@ -1,0 +1,30 @@
+@startuml SekvensDiagram_Usecase5
+title SD: UC5 - Registrer gæst ved ankomst
+
+hide footbox
+skinparam sequenceMessageAlign left
+
+participant ":CheckInSystem" as sys #White
+participant "_guests : Guest[]" as guests #White
+
+[-> sys : RegisterGuest(name, company, host)
+activate sys
+
+create participant "g : Guest" as g #White
+sys --> g : create(name, company, host)
+note right of g
+  arrivalTime = now
+  isPresent = true
+  safetyFolder = false
+  host association set
+end note
+
+
+sys -> guests : add(g)
+activate guests
+deactivate guests
+
+[<-- sys : g
+deactivate sys
+
+@enduml

@@ -1,0 +1,30 @@
+
+@startuml Domaenemodel
+title Domænemodel - Komme/gå-system til HYDAC
+skinparam classAttributeIconSize 0
+hide methods
+hide circle
+
+class Medarbejder {
+  Brugernavn
+  Afdeling
+  Navn
+  Er Til Stede
+  Ankomst Tidspunkt
+  Afgangs Tidspunkt
+  Adminstrator
+  Lokale
+}
+
+class Gæst {
+  Navn
+  Firma
+  Er Til Stede
+  Ankomst Tidspunkt
+  Afgangs Tidspunkt
+  Sikkerhedsfolder udleveret
+}
+
+Medarbejder "1" -- "0..*" Gæst : er ansvarlig for 
+
+@enduml
