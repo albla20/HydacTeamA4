@@ -4,7 +4,8 @@ title Objektmodel (Objektdiagram) - Komme/gå-system til HYDAC
 skinparam objectAttributeIconSize 0
 
 object "Rene Hansen : Medarbejder" as reneHansen {
-  Medarbejder ID = 12
+  Brugernavn = rene.hansen
+  Afdeling = IT
   Navn = René Hansen
   Adminstrator = nej
   Er Til Stede = ja
@@ -15,7 +16,8 @@ object "Rene Hansen : Medarbejder" as reneHansen {
 }
 
 object "Daniel R : Medarbejder" as danielR {
-  Medarbejder ID = 7
+  Brugernavn = daniel.r
+  Afdeling = HR
   Navn = Daniel R.
   Adminstrator = Ja
   Er Til Stede = ja
@@ -32,7 +34,7 @@ object "Mikkel Holst : Gæst" as mikkelHolst {
   Lokale = Mødelokale 2
   Ankomst Tidspunkt = 08:30
   Afgangs Tidspunkt = 12:50
-  Sikkerheds folder Udleveret = ja
+  Sikkerhedsfolder Udleveret = ja
 }
 
 object "Kasper Edal : Gæst" as kasperEdal {
@@ -41,8 +43,8 @@ object "Kasper Edal : Gæst" as kasperEdal {
   Er Til Stede = ja
   Lokale = Mødelokale 1
   Ankomst Tidspunkt = 12:00
-  Afgangs Tidspunkt = 12:45
-  Sikkerheds folder Udleveret = nej
+  Afgangs Tidspunkt = -
+  Sikkerhedsfolder Udleveret = nej
 }
 
 reneHansen -- mikkelHolst : ansvarlig for

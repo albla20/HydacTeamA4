@@ -8,7 +8,7 @@
             CheckInSystem komOgGåSystem = new();
             komOgGåSystem.CreateEmployee("Admin Jensen", "IT", true);
             komOgGåSystem.CheckInEmployee("admin.jensen");
-            komOgGåSystem.RegisterGuests("Lars Allan", "Sad Onion Inc.", komOgGåSystem.FindEmployeeByUsername("admin.jensen"));
+            komOgGåSystem.RegisterGuest("Lars Allan", "Sad Onion Inc.", komOgGåSystem.FindEmployeeByUsername("admin.jensen"));
 
             Menu mainMenu = Setup.SetupMainMenu();
 
@@ -77,7 +77,7 @@
                         string guestName = Console.ReadLine();
                         Console.Write("Indtast navnet på firmaet gæsten kommer fra: ");
                         string guestCompany = Console.ReadLine();
-                        komOgGåSystem.RegisterGuests(guestName, guestCompany, loggedInUser);
+                        komOgGåSystem.RegisterGuest(guestName, guestCompany, loggedInUser);
                         break;
                     case 4:
                         Console.Write("Indtast gæstens navn: ");

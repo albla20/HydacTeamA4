@@ -7,7 +7,7 @@ skinparam responseMessageBelowArrow true
 actor ": Medarbejder" as med #White
 participant ": KomGåSystem" as sys #White
 
-med -> sys : registrerGæst(navn, firma)
+med -> sys : RegistrerGæst(navn, firma, ansvarlig)
 sys --> med : bekræftelse
 
 @enduml

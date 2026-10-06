@@ -6,7 +6,8 @@ hide methods
 hide circle
 
 class Medarbejder {
-  Medarbejder ID
+  Brugernavn
+  Afdeling
   Navn
   Er Til Stede
   Ankomst Tidspunkt
@@ -21,7 +22,7 @@ class Gæst {
   Er Til Stede
   Ankomst Tidspunkt
   Afgangs Tidspunkt
-  Sikkerheds folder udleveret
+  Sikkerhedsfolder udleveret
 }
 
 Medarbejder "1" -- "0..*" Gæst : er ansvarlig for 

@@ -108,7 +108,7 @@ namespace KomGåSystem
                 employeeToEdit.Department = newDepartment;
         }
 
-        public Guest RegisterGuests(string name, string company, Employee host)
+        public Guest RegisterGuest(string name, string company, Employee host)
         {
             if (string.IsNullOrWhiteSpace(name) || host == null) return null;
             if (_guestCount >= _guests.Length) return null;

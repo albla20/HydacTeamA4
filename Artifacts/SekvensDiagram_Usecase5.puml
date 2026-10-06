@@ -7,7 +7,7 @@ skinparam sequenceMessageAlign left
 participant ":CheckInSystem" as sys #White
 participant "_guests : Guest[]" as guests #White
 
-[-> sys : registerGuest(name, company, host)
+[-> sys : RegisterGuest(name, company, host)
 activate sys
 
 create participant "g : Guest" as g #White
