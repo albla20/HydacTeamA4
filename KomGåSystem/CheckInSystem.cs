@@ -21,7 +21,7 @@ namespace KomGåSystem
         }
         public void ShowPresent()
         {
-            Console.WriteLine("Medarbejdere tilstede:");
+            Console.WriteLine("MEDARBEJDERE TILSTEDE:");
             for (int i = 0; i < _employeeCount; i++)
             {
                 Employee emp = _employees[i];
@@ -30,7 +30,7 @@ namespace KomGåSystem
                     Console.WriteLine(emp.Name);
             }
 
-            Console.WriteLine("Gæster tilstede:");
+            Console.WriteLine("GÆSTER TILSTEDE:");
             for (int i = 0; i < _guestCount; i++)
             {
                 Guest g = _guests[i];
@@ -98,13 +98,13 @@ namespace KomGåSystem
             if (employeeToEdit == null) return;
 
             Console.Write("Indtast nyt navn (eller tryk enter for at beholde): ");
-            string newName = Console.ReadLine();
+            string? newName = Console.ReadLine();
             Console.Write("Indtast ny afdeling (eller tryk enter for at beholde): ");
-            string newDepartment = Console.ReadLine();
+            string? newDepartment = Console.ReadLine();
 
             if (!string.IsNullOrWhiteSpace(newName))
                 employeeToEdit.Name = newName;
-            if (newDepartment != null)
+            if (!string.IsNullOrWhiteSpace(newDepartment))
                 employeeToEdit.Department = newDepartment;
         }
 

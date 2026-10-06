@@ -52,10 +52,8 @@ namespace KomGåSystem
 
         public Guest CheckInGuest()
         {
-            Console.WriteLine("Indtast navn på gæst: ");
-            string nameGuest = Console.ReadLine();
-            Console.WriteLine("Indtast firmanavn: ");
-            string nameCompany = Console.ReadLine();
+            string nameGuest = Helpers.GetUserString("Indtast navn på gæst");
+            string nameCompany = Helpers.GetUserString("Indtast firmanavn");
             Console.WriteLine("Sikkerhedsfolder J/N");
             char safetyFolderChar = Console.ReadKey().KeyChar;
 

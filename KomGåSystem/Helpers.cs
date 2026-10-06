@@ -12,6 +12,7 @@ namespace KomGåSystem
             int userInt;
 
             Console.WriteLine(message);
+            Console.Write("> ");
             string userInput = Console.ReadLine() ?? string.Empty;
 
             while (!int.TryParse(userInput, out userInt))
@@ -33,6 +34,20 @@ namespace KomGåSystem
             while (choice < lowerLimit || choice > upperLimit);
 
             return choice;
+        }
+
+        public static string GetUserString(string message = "")
+        {
+            Console.Write($"{message}\n>: ");
+            string? userInput = Console.ReadLine();
+
+            while (string.IsNullOrWhiteSpace(userInput))
+            {
+                Console.WriteLine("Input ikke accepteret. Prøv igen.");
+                Console.Write(">: ");
+                userInput = Console.ReadLine();
+            }
+            return userInput.Trim();
         }
     }
 }

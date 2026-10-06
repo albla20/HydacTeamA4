@@ -19,7 +19,7 @@ namespace KomGåSystem
 
         public void Show()
         {
-            Console.WriteLine(Title);
+            Console.WriteLine($"---{Title}---");
             Console.WriteLine();
             for (int i = 0; i < _itemCount; i++)
             {

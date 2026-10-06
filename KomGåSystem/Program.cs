@@ -25,8 +25,7 @@
                 {
                     case 1:
                         Console.Clear();
-                        Console.Write("Indtast brugernavn: ");
-                        string userNameInput = Console.ReadLine() ?? string.Empty;
+                        string userNameInput = Helpers.GetUserString("Indtast brugernavn");
                         loggedInUser = komOgGåSystem.Login(userNameInput);
                         if (loggedInUser is not null && loggedInUser.IsLoggedIn)
                             SubMenu(loggedInUser, komOgGåSystem);
@@ -65,53 +64,48 @@
                     case 1:
                         komOgGåSystem.CheckInEmployee(loggedInUser.Username);
                         Console.WriteLine("Du er nu checked ind. Tryk på en tast for at fortsætte.");
-                        Console.ReadKey();
                         break;
                     case 2:
                         komOgGåSystem.CheckOutEmployee(loggedInUser.Username);
                         Console.WriteLine("Du er nu checked ud. Tryk på en tast for at fortsætte.");
-                        Console.ReadKey();
                         break;
                     case 3:
+<<<<<<< HEAD
                         Console.Write("Indtats gæstens navn: ");
                         string guestName = Console.ReadLine();
                         Console.Write("Indtast navnet på firmaet gæsten kommer fra: ");
                         string guestCompany = Console.ReadLine();
                         komOgGåSystem.RegisterGuest(guestName, guestCompany, loggedInUser);
+=======
+                        string guestName = Helpers.GetUserString("Indtats gæstens navn");
+                        string guestCompany = Helpers.GetUserString("Indtast navnet på firmaet gæsten kommer fra");
+                        komOgGåSystem.RegisterGuests(guestName, guestCompany, loggedInUser);
+                        Console.WriteLine($"{guestName} er nu checked ind.");
+>>>>>>> 87fa63f7aa71d40b7d2e9d6586a4704e469247ac
                         break;
                     case 4:
-                        Console.Write("Indtast gæstens navn: ");
-                        string guestName2 = Console.ReadLine();
+                        string guestName2 = Helpers.GetUserString("Indtast gæstens navn");
                         komOgGåSystem.CheckOutGuest(guestName2);
-                        Console.WriteLine($"{guestName2} er nu checked ud");
-                        Console.ReadKey();
+                        Console.WriteLine($"{guestName2} er nu checked ud.");
                         break;
                     case 5:
-                        Console.Write("Indtast gæstens navn: ");
-                        string guestName3 = Console.ReadLine();
+                        string guestName3 = Helpers.GetUserString("Indtast gæstens navn");
                         komOgGåSystem.MarkSafetyFolderHandedOut(guestName3);
-                        Console.WriteLine($"{guestName3} har fået sikkerhedsfolderen");
-                        Console.ReadKey();
+                        Console.WriteLine($"{guestName3} har fået sikkerhedsfolderen.");
                         break;
                     case 6:
                         komOgGåSystem.ShowPresent();
-                        Console.ReadKey();
                         break;
                     case 7:
-                        Console.Write("Indstast navnet på den nye medarbejder: ");
-                        string newEmployee = Console.ReadLine();
-                        Console.Write("Indtast navnet på deres afdeling: ");
-                        string newDepart = Console.ReadLine();
+                        string newEmployee = Helpers.GetUserString("Indstast navnet på den nye medarbejder");
+                        string newDepart = Helpers.GetUserString("Indtast navnet på deres afdeling");
                         komOgGåSystem.CreateEmployee(newEmployee, newDepart);
-                        Console.WriteLine("Ny medarbejder oprettet");
-                        Console.ReadKey();
+                        Console.WriteLine("Ny medarbejder oprettet.");
                         break;
                     case 8:
-                        Console.Write("Indtast brugernavnet på medarbejderen du vil redigere: ");
-                        string employeeUserName = Console.ReadLine();
+                        string employeeUserName = Helpers.GetUserString("Indtast brugernavnet på medarbejderen du vil redigere");
                         Employee chosenEmployee = komOgGåSystem.FindEmployeeByUsername(employeeUserName);
                         komOgGåSystem.EditEmployee(chosenEmployee);
-                        Console.ReadKey();
                         break;
                     case 0:
                         loggedInUser.IsLoggedIn = false;
@@ -119,9 +113,8 @@
                     default:
                         break;
                 }
-
+                Console.ReadKey();
             }
-
         }
     }
 }
