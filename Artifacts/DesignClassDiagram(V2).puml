@@ -6,13 +6,15 @@ skinparam classAttributeIconSize 0
 hide emptymembers
 
 class CheckInSystem {
-  - employeeCount : Integer
-  - guestCount : Integer
+  - _employeeCount : Integer
+  - _guestCount : Integer
+  - _employees : Employee[]
+  - _guests : Guest[]
   + <<constructor>> CheckInSystem(maxEmployees : Integer = 100, maxGuests : Integer = 50)
   + ShowPresent()
   + CreateEmployee(name : String, department : String, giveAdmin : Boolean = false) : Employee
-  + FindEmployeeByUsername(username : String) : Employee [0..1]
-  + Login(username : String) : Employee [0..1]
+  + FindEmployeeByUsername(username : String) : Employee
+  + Login(username : String) : Employee
   + CheckInEmployee(username : String)
   + CheckOutEmployee(username : String)
   + EditEmployee(employeeToEdit : Employee)
@@ -23,33 +25,31 @@ class CheckInSystem {
 }
 
 class Employee {
-  - name : String
-  - username : String
-  - department : String
-  - arrivalTime : DateTime
-  - departureTime : DateTime
-  + isLoggedIn : Boolean
-  + isCheckedIn : Boolean
-  + isAdmin : Boolean { readOnly }
+  + Name : String
+  + <<get>> Username : String
+  + Department : String
+  + ArrivalTime : DateTime
+  + DepartureTime : DateTime
+  + IsLoggedIn : Boolean
+  + IsCheckedIn : Boolean
+  + <<get>>IsAdmin : Boolean
   + <<constructor>> Employee(name : String, username : String, department : String, isAdmin : Boolean = false)
   + CheckInGuest() : Guest
   + CheckOutGuest(checkOutGuest : Guest)
-  + IsPresent() : Boolean
   + GetStatus() : String
   + IsHostFor(allGuest : Guest[])
 }
 
 class Guest {
-  - name : String
-  - company : String
-  - arrivalTime : DateTime
-  - departureTime : DateTime
-  - safetyFolderHandedOut : Boolean
-  + isPresent : Boolean
+  + <<get>>Name : String
+  - _company : String
+  - _arrivalTime : DateTime
+  + DepartureTime : DateTime
+  - _safetyFolderHandedOut : Boolean
+  + IsPresent : Boolean
   + <<constructor>> Guest(name : String, company : String, host : Employee, safetyFolderHandedOut : Boolean)
   + GetStatus() : String
   + MarkSafetyFolderHandedOut()
-  + ToString() : String
 }
 
 CheckInSystem --> "_employees\n0..*" Employee
