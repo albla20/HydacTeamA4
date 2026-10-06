@@ -1,43 +1,24 @@
-# Build outputs
+# Visual Studio cache/options
+.vs/
+
+# Build folders
 bin/
 obj/
-out/
-publish/
-artifacts/
 
-# Visual Studio / VS Code / Rider
-.vs/
-.vscode/
-.idea/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-*.csproj.user
-*.sln.DotSettings.user
-
-# NuGet
-packages/
-*.nupkg
-project.lock.json
-packages.lock.json
-
-# Testing & coverage
+# Unit test results
 TestResults/
-*.trx
+
+# Coverage
 coverage/
 *.coverage
 *.coveragexml
 
-# OS files
-.DS_Store
-Thumbs.db
+# Visual Studio user files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
-# Logs
+# Temporary files
+*.tmp
 *.log
-
-# User secrets / environment
-secrets.json
-*.env
-appsettings.Development.json
-appsettings.Local.json
