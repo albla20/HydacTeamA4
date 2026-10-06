@@ -2,13 +2,13 @@
 
 ```
 Medarbejder                      Gæst
-- Medarbejder ID                 - Navn
-- Navn                           - Firma
-- Er Til Stede                   - Er Til Stede
-- Ankomst Tidspunkt               - Ankomst Tidspunkt
-- Afgangs Tidspunkt               - Afgangs Tidspunkt
-- Adminstrator                   - Sikkerhedsfolder udleveret
-- Lokale
+- Brugernavn                     - Navn
+- Afdeling                       - Firma
+- Navn                           - Er Til Stede
+- Er Til Stede                   - Ankomst Tidspunkt
+- Ankomst Tidspunkt              - Afgangs Tidspunkt
+- Afgangs Tidspunkt              - Sikkerhedsfolder udleveret
+- Adminstrator                   
 
 Medarbejder "1" -- "0..*" Gæst : er ansvarlig for
 ```
