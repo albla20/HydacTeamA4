@@ -44,8 +44,6 @@ namespace KomGåSystem
         {
             if (string.IsNullOrWhiteSpace(name)) return null;
             if (_employeeCount >= _employees.Length) return null;
-
-            string id = "E" + (_employeeCount + 1).ToString("D4");
             string username = GenerateUsername(name);
 
             Employee emp = new Employee(name, username, department ?? string.Empty, giveAdmin);
