@@ -1,0 +1,13 @@
+@startuml UC5
+title SSD: UC5 - Registrer gæst ved ankomst
+hide footbox
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+
+actor ": Medarbejder" as med #White
+participant ": KomGåSystem" as sys #White
+
+med -> sys : RegistrerGæst(navn, firma, ansvarlig)
+sys --> med : bekræftelse
+
+@enduml
