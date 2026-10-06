@@ -70,18 +70,10 @@
                         Console.WriteLine("Du er nu checked ud. Tryk på en tast for at fortsætte.");
                         break;
                     case 3:
-<<<<<<< HEAD
-                        Console.Write("Indtats gæstens navn: ");
-                        string guestName = Console.ReadLine();
-                        Console.Write("Indtast navnet på firmaet gæsten kommer fra: ");
-                        string guestCompany = Console.ReadLine();
-                        komOgGåSystem.RegisterGuest(guestName, guestCompany, loggedInUser);
-=======
                         string guestName = Helpers.GetUserString("Indtats gæstens navn");
                         string guestCompany = Helpers.GetUserString("Indtast navnet på firmaet gæsten kommer fra");
-                        komOgGåSystem.RegisterGuests(guestName, guestCompany, loggedInUser);
+                        komOgGåSystem.RegisterGuest(guestName, guestCompany, loggedInUser);
                         Console.WriteLine($"{guestName} er nu checked ind.");
->>>>>>> 87fa63f7aa71d40b7d2e9d6586a4704e469247ac
                         break;
                     case 4:
                         string guestName2 = Helpers.GetUserString("Indtast gæstens navn");

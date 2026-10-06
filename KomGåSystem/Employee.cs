@@ -88,7 +88,7 @@ namespace KomGåSystem
             {
                 if (oneGuest.Host == this)
                 {
-                    Console.WriteLine(oneGuest.ToString());
+                    Console.WriteLine(oneGuest.GetStatus());
                 }
             }
         }
