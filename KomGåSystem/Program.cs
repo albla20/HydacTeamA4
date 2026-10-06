@@ -6,9 +6,7 @@
         {
 
             CheckInSystem komOgGåSystem = new();
-            komOgGåSystem.CreateEmployee("Admin Jensen", "IT", true);
-            komOgGåSystem.CheckInEmployee("admin.jensen");
-            komOgGåSystem.RegisterGuest("Lars Allan", "Sad Onion Inc.", komOgGåSystem.FindEmployeeByUsername("admin.jensen"));
+            Setup.AddUsers(komOgGåSystem);
 
             Menu mainMenu = Setup.SetupMainMenu();
 

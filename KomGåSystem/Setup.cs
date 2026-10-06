@@ -48,5 +48,26 @@ namespace KomGåSystem
 
             return adminMenu;
         }
+
+        public static void AddUsers(CheckInSystem komOgGåSystem)
+        {
+            // Employees
+            komOgGåSystem.CreateEmployee("Admin Jensen", "IT", true);
+            komOgGåSystem.CheckInEmployee("admin.jensen");
+            
+            komOgGåSystem.CreateEmployee("Rene Hansen", "IT");
+            komOgGåSystem.CheckInEmployee("rene.hansen");
+
+            komOgGåSystem.CreateEmployee("Daniel R.", "HR", true);
+
+
+            // Guests
+            komOgGåSystem.RegisterGuest("Mikkel Holst", "Murr Elektronik", komOgGåSystem.FindEmployeeByUsername("rene.hansen"));
+            komOgGåSystem.CheckOutGuest("Mikkel Holst");
+            komOgGåSystem.RegisterGuest("Kasper Edal", "Nidec", komOgGåSystem.FindEmployeeByUsername("rene.hansen"));
+            komOgGåSystem.RegisterGuest("Lars Allan", "Sad Onion Inc.", komOgGåSystem.FindEmployeeByUsername("admin.jensen"));
+            komOgGåSystem.MarkSafetyFolderHandedOut("Lars Allan");
+
+        }
     }
 }
