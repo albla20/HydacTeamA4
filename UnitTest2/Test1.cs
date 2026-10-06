@@ -14,7 +14,7 @@ namespace KomGåSystem.Tests
             var emp = sys.CreateEmployee("Test User", "Dev");
             Assert.IsNotNull(emp);
 
-            var guest = sys.RegisterGuests("Gæst One", "Acme", emp);
+            var guest = sys.RegisterGuest("Gæst One", "Acme", emp);
             Assert.IsNotNull(guest);
             Assert.IsTrue(guest.IsPresent);
             Assert.AreEqual(emp, guest.Host);
@@ -40,7 +40,7 @@ namespace KomGåSystem.Tests
             Assert.AreNotEqual(default(DateTime), emp.ArrivalTime);
 
             // register a guest for this host
-            var guest = sys.RegisterGuests("Klaus", "Hydac", emp);
+            var guest = sys.RegisterGuest("Klaus", "Hydac", emp);
             Assert.IsNotNull(guest);
             Assert.IsTrue(guest.IsPresent);
             Assert.AreEqual(emp, guest.Host);
@@ -51,7 +51,7 @@ namespace KomGåSystem.Tests
             Assert.AreNotEqual(default(DateTime), guest.DepartureTime);
 
             // mark safety folder handed out
-            var guest2 = sys.RegisterGuests("Peter", "Firm", emp);
+            var guest2 = sys.RegisterGuest("Peter", "Firm", emp);
             Assert.IsNotNull(guest2);
             sys.MarkSafetyFolderHandedOut(guest2.ToString());
             StringAssert.Contains(guest2.GetStatus(), "Sikkerhedsfolder udleveret: Ja");
