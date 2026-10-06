@@ -22,22 +22,36 @@ namespace KomGåSystem
         public void ShowPresent()
         {
             Console.WriteLine("MEDARBEJDERE TILSTEDE:");
+            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+");
+            Console.WriteLine($"| {"Navn",-20}| {"Ankomst",-20}|");
+            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+");
             for (int i = 0; i < _employeeCount; i++)
             {
                 Employee emp = _employees[i];
                 if (emp == null) continue;
                 if (emp.IsCheckedIn)
-                    Console.WriteLine(emp.Name);
+                    Console.WriteLine($"| {emp.Name,-20}| {emp.ArrivalTime,-20}|");
             }
+            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+");
+
+            Console.WriteLine();
 
             Console.WriteLine("GÆSTER TILSTEDE:");
+            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+" + new string('-',21) + "+" + new string('-',29) + "+");
+            Console.WriteLine($"| {"Navn",-20}| {"Ankomst",-20}| {"Firma",-20}| {"Sikkerhedsfolder udleveret",-28}|");
+            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+" + new string('-',21) + "+" + new string('-',29) + "+");
             for (int i = 0; i < _guestCount; i++)
             {
                 Guest g = _guests[i];
                 if (g == null) continue;
                 if (g.IsPresent)
-                    Console.WriteLine(g.ToString());
+                {
+
+                    string handedOut = g.SafetyHolderHandedOut ? "Ja" : "Nej";
+                    Console.WriteLine($"| {g.Name,-20}| {g.ArrivelTime,-20}| {g.Company,-20}| {handedOut,-28}|");
+                }
             }
+            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+" + new string('-',21) + "+" + new string('-',29) + "+");
         }
 
         public Employee CreateEmployee(string name, string department, bool giveAdmin = false)

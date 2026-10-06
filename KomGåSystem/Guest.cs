@@ -30,9 +30,18 @@ namespace KomGåSystem
         public DateTime DepartureTime
         {
             get => _departureTime;
-
             set => _departureTime = value;
         }
+
+        public DateTime ArrivelTime
+        {
+            get => _arrivalTime;
+            set => _arrivalTime = value;
+        }
+
+        public string Company => _company;
+
+        public bool SafetyHolderHandedOut => _safetyFolderHandedOut;
 
         public Employee Host
         {
@@ -50,7 +59,7 @@ namespace KomGåSystem
             else
                 safetyFolderDA = "Nej";
 
-            return $"Navn: {_name}\nAnkomst tid: {_arrivalTime}\nSikkerhedsfolder udleveret: {safetyFolderDA}";
+            return $"Navn: {_name,-14}Ankomst tid: {_arrivalTime,-20}Sikkerhedsfolder udleveret: {safetyFolderDA,-20}";
         }
         public void MarkSafetyFolderHandedOut()
         {
