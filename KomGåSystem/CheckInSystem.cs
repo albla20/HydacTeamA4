@@ -37,9 +37,9 @@ namespace KomGåSystem
             Console.WriteLine();
 
             Console.WriteLine("GÆSTER TILSTEDE:");
-            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+" + new string('-',21) + "+" + new string('-',29) + "+");
-            Console.WriteLine($"| {"Navn",-20}| {"Ankomst",-20}| {"Firma",-20}| {"Sikkerhedsfolder udleveret",-28}|");
-            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+" + new string('-',21) + "+" + new string('-',29) + "+");
+            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+" + new string('-',21) + "+" + new string('-',29) + "+" + new string('-',21) + "+");
+            Console.WriteLine($"| {"Navn",-20}| {"Ankomst",-20}| {"Firma",-20}| {"Sikkerhedsfolder udleveret",-28}| {"Ansvarlig for besøg",-20}|");
+            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+" + new string('-',21) + "+" + new string('-',29) + "+" + new string('-',21) + "+");
             for (int i = 0; i < _guestCount; i++)
             {
                 Guest g = _guests[i];
@@ -48,10 +48,10 @@ namespace KomGåSystem
                 {
 
                     string handedOut = g.SafetyHolderHandedOut ? "Ja" : "Nej";
-                    Console.WriteLine($"| {g.Name,-20}| {g.ArrivelTime,-20}| {g.Company,-20}| {handedOut,-28}|");
+                    Console.WriteLine($"| {g.Name,-20}| {g.ArrivelTime,-20}| {g.Company,-20}| {handedOut,-28}| {g.Host.Name,-20}|");
                 }
             }
-            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+" + new string('-',21) + "+" + new string('-',29) + "+");
+            Console.WriteLine("+" + new string('-', 21) + "+" + new string('-', 21) + "+" + new string('-',21) + "+" + new string('-',29) + "+" + new string('-',21) + "+");
         }
 
         public Employee CreateEmployee(string name, string department, bool giveAdmin = false)
